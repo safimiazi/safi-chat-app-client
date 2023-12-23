@@ -4,7 +4,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/Apps';
 import { faker } from '@faker-js/faker';
-
+import AntSwitch from './AntSwitch';
 const Contact = () => {
     const theme = useTheme()
     const dispatch = useDispatch()
@@ -73,7 +73,7 @@ const Contact = () => {
                     <Divider />
                     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                         <Stack direction={"row"} alignItems={"center"} spacing={2}>
-                            <Star />
+                            <Star size={21}/>
                             <Typography variant='subtitle2'>Starred Messages</Typography>
                         </Stack>
                         <IconButton>
@@ -83,7 +83,7 @@ const Contact = () => {
                     <Divider />
                     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                         <Stack direction={"row"} alignItems={"center"} spacing={2}>
-                            <Bell />
+                            <Bell size={21}/>
                             <Typography variant='subtitle2'>Mute Notification</Typography>
                         </Stack>
                         <AntSwitch/>
