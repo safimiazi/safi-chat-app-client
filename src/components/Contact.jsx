@@ -1,9 +1,11 @@
 import { Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import { X } from 'phosphor-react';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 const Contact = () => {
     const theme = useTheme()
+    const dispatch = useDispatch()
     return (
         <Box sx={{ width: "320px", height: "100vh" }}>
             <Stack sx={{ height: "100vh" }}>
@@ -13,7 +15,7 @@ const Contact = () => {
                             Contact Info
                         </Typography>
                         <IconButton onClick={()=> {
-                            
+
                         }}>
                            <X/>
                         </IconButton>
