@@ -1,5 +1,5 @@
-import { Avatar, Box, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
-import { Phone, VideoCamera, X } from 'phosphor-react';
+import { Avatar, Box, Button, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { CaretRight, Phone, VideoCamera, X } from 'phosphor-react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/Apps';
@@ -52,12 +52,16 @@ const Contact = () => {
 
                         </Stack>
                     </Stack>
-                    <Divider/>
+                    <Divider />
                     <Stack spacing={0.5}>
                         <Typography variant='article'>About</Typography>
                         <Typography variant='body2'>Imagination is the only limit</Typography>
                     </Stack>
-                    <Divider/>
+                    <Divider />
+                    <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+                        <Typography variant='subtitle2'>Media, Links & Docs</Typography>
+                        <Button endIcon={<CaretRight />}>401</Button>
+                    </Stack>
                 </Stack>
             </Stack>
         </Box>
