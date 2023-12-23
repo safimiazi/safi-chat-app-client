@@ -32,6 +32,9 @@ const Contact = () => {
 <Typography variant='article' fontWeight={600}>
 {faker.name.fullName()}
 </Typography>
+<Typography variant='body2' fontWeight={600}>
+{"+880184854"}
+</Typography>
 </Stack>
 </Stack>
                 </Stack>
