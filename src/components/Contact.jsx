@@ -84,11 +84,9 @@ const Contact = () => {
                     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                         <Stack direction={"row"} alignItems={"center"} spacing={2}>
                             <Bell />
-                            <Typography variant='subtitle2'>Starred Messages</Typography>
+                            <Typography variant='subtitle2'>Mute Notification</Typography>
                         </Stack>
-                        <IconButton>
-                            <CaretRight />
-                        </IconButton>
+                        <AntSwitch/>
                     </Stack>
                     <Divider />
                 </Stack>
