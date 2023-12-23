@@ -24,6 +24,9 @@ const Contact = () => {
                     </Stack>
                 </Box>
                 {/* body */}
+                <Stack>
+                    
+                </Stack>
             </Stack>
         </Box>
     );
