@@ -12,7 +12,9 @@ const Contact = () => {
                         <Typography variant='subtitle2'>
                             Contact Info
                         </Typography>
-                        <IconButton>
+                        <IconButton onClick={()=> {
+                            
+                        }}>
                            <X/>
                         </IconButton>
                     </Stack>
