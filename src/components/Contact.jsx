@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import { Stack } from 'phosphor-react';
 import React from 'react';
 
@@ -12,6 +12,9 @@ const Contact = () => {
 <Typography>
     Contact Info
 </Typography>
+<IconButton>
+    
+</IconButton>
 </Stack>
 
                 </Box>
