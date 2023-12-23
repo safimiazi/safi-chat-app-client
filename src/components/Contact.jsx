@@ -10,6 +10,7 @@ const Contact = () => {
     return (
         <Box sx={{ width: "320px", height: "100vh" }}>
             <Stack sx={{ height: "100vh" }}>
+                {/* header */}
                 <Box sx={{ boxShadow: "0px 0px 2px rgba(0,0,0, 0.25)", width: "100%", backgroundColor: theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background }}>
                     <Stack sx={{ height: "100%", p: 2 }} direction="row" alignItems={"center"} justifyContent="space-between" spacing={3}>
                         <Typography variant='subtitle2'>
@@ -21,8 +22,8 @@ const Contact = () => {
                             <X />
                         </IconButton>
                     </Stack>
-
                 </Box>
+                {/* body */}
             </Stack>
         </Box>
     );
