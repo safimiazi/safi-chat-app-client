@@ -38,7 +38,9 @@ const Contact = () => {
                         </Stack>
                     </Stack>
                     <Stack direction="row" alignItems={"center"} justifyContent={"space-evenly"}>
+<Stack spacing={1} alignItems={"center"}>
 
+</Stack>
                     </Stack>
                 </Stack>
             </Stack>
