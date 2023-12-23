@@ -73,7 +73,7 @@ const Contact = () => {
                     <Divider />
                     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                         <Stack direction={"row"} alignItems={"center"} spacing={2}>
-                            <Star size={21}/>
+                            <Star size={21} />
                             <Typography variant='subtitle2'>Starred Messages</Typography>
                         </Stack>
                         <IconButton>
@@ -83,12 +83,20 @@ const Contact = () => {
                     <Divider />
                     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                         <Stack direction={"row"} alignItems={"center"} spacing={2}>
-                            <Bell size={21}/>
+                            <Bell size={21} />
                             <Typography variant='subtitle2'>Mute Notification</Typography>
                         </Stack>
-                        <AntSwitch/>
+                        <AntSwitch />
                     </Stack>
                     <Divider />
+                    <Typography>1 group in common</Typography>
+                    <Stack>
+                        <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
+                        <Stack spacing={0.5}>
+                            <Typography variant='subtitle2'>Coding Monk</Typography>
+                            <Typography variant='caption'>Owl, parrot, rabbit, you</Typography>
+                        </Stack>
+                    </Stack>
                 </Stack>
             </Stack>
         </Box>
