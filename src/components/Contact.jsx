@@ -1,8 +1,9 @@
-import { Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { Avatar, Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import { X } from 'phosphor-react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/Apps';
+import { faker } from '@faker-js/faker';
 
 const Contact = () => {
     const theme = useTheme()
@@ -25,7 +26,10 @@ const Contact = () => {
                 </Box>
                 {/* body */}
                 <Stack sx={{height: "100vh", position: "relative", flexGrow: 1, overflow:"scroll"}} p={3} spacing={3}>
+<Stack alignItems={"center"} direction={"row"} spacing={2}>
+    <Avatar src={faker.image.avatar()} alt={faker.name.firstName()} sx={{height: 64, width: 64}}/>
 
+</Stack>
                 </Stack>
             </Stack>
         </Box>
