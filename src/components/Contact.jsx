@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
-import { CaretRight, Phone, Star, VideoCamera, X } from 'phosphor-react';
+import { Bell, CaretRight, Phone, Star, VideoCamera, X } from 'phosphor-react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/Apps';
@@ -74,6 +74,16 @@ const Contact = () => {
                     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                         <Stack direction={"row"} alignItems={"center"} spacing={2}>
                             <Star />
+                            <Typography variant='subtitle2'>Starred Messages</Typography>
+                        </Stack>
+                        <IconButton>
+                            <CaretRight />
+                        </IconButton>
+                    </Stack>
+                    <Divider />
+                    <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+                        <Stack direction={"row"} alignItems={"center"} spacing={2}>
+                            <Bell />
                             <Typography variant='subtitle2'>Starred Messages</Typography>
                         </Stack>
                         <IconButton>
