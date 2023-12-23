@@ -57,6 +57,7 @@ const Contact = () => {
                         <Typography variant='article'>About</Typography>
                         <Typography variant='body2'>Imagination is the only limit</Typography>
                     </Stack>
+                    <Divider/>
                 </Stack>
             </Stack>
         </Box>
