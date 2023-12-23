@@ -1,5 +1,5 @@
 import { Avatar, Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
-import { X } from 'phosphor-react';
+import { Phone, X } from 'phosphor-react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/Apps';
@@ -40,7 +40,7 @@ const Contact = () => {
                     <Stack direction="row" alignItems={"center"} justifyContent={"space-evenly"}>
 <Stack spacing={1} alignItems={"center"}>
 <IconButton>
-    
+    <Phone/>
 </IconButton>
 </Stack>
                     </Stack>
