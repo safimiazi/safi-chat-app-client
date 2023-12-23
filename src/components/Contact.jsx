@@ -24,7 +24,7 @@ const Contact = () => {
                     </Stack>
                 </Box>
                 {/* body */}
-                <Stack sx={{height: "100vh", position: "relative", flexGrow: 1, overflow:"scroll"}}>
+                <Stack sx={{height: "100vh", position: "relative", flexGrow: 1, overflow:"scroll"}} p={3} spacing={3}>
 
                 </Stack>
             </Stack>
