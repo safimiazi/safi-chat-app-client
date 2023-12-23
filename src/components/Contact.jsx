@@ -30,7 +30,7 @@ const Contact = () => {
     <Avatar src={faker.image.avatar()} alt={faker.name.firstName()} sx={{height: 64, width: 64}}/>
 <Stack spacing={0.5}>
 <Typography variant='article' fontWeight={600}>
-
+{faker.name.fullName()}
 </Typography>
 </Stack>
 </Stack>
