@@ -1,4 +1,4 @@
-import { Avatar, Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { Avatar, Box, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import { Phone, VideoCamera, X } from 'phosphor-react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -52,6 +52,7 @@ const Contact = () => {
 
                         </Stack>
                     </Stack>
+                    <Divider/>
                 </Stack>
             </Stack>
         </Box>
