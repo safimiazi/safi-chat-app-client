@@ -29,8 +29,8 @@ const Contact = () => {
 <Stack alignItems={"center"} direction={"row"} spacing={2}>
     <Avatar src={faker.image.avatar()} alt={faker.name.firstName()} sx={{height: 64, width: 64}}/>
 <Stack spacing={0.5}>
-<Typography>
-    
+<Typography variant='article' fontWeight={600}>
+
 </Typography>
 </Stack>
 </Stack>
