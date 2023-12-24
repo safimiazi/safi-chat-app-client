@@ -33,6 +33,28 @@ const BlockDialog = ({open, handleClose}) => {
       </Dialog>
     )
 }
+const DeleteDialog = ({open, handleClose}) => {
+    return (
+        <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>Delete This Chat</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+           Are you sure you want to delete this chat?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Yes</Button>
+        </DialogActions>
+      </Dialog>
+    )
+}
 const Contact = () => {
     const theme = useTheme()
     const dispatch = useDispatch()
