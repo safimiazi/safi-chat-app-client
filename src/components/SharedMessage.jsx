@@ -2,7 +2,7 @@ import { Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { UpdateSidebarType } from '../redux/slices/Apps';
-import { X } from 'phosphor-react';
+import { CaretLeft, X } from 'phosphor-react';
 
 const SharedMessage = () => {
     const theme = useTheme()
@@ -15,7 +15,7 @@ const SharedMessage = () => {
                         <IconButton onClick={() => {
                             dispatch(UpdateSidebarType("CONTACT"))
                         }}>
-                            <X />
+                            <CaretLeft />
                         </IconButton>
                         <Typography variant='subtitle2'>
                             Shared Messages
@@ -23,6 +23,10 @@ const SharedMessage = () => {
 
                     </Stack>
                 </Box>
+                {/* body */}
+                <Stack sx={{ height: "100vh", position: "relative", flexGrow: 1, overflow: "auto" }} p={3} spacing={3}>
+                    
+                </Stack>
             </Stack>
         </Box>
     );
