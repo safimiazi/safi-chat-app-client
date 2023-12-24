@@ -5,6 +5,7 @@ import Conversation from "../../components/Conversation/Conversation";
 import { useTheme } from "@emotion/react";
 import Contact from "../../components/Contact";
 import { useSelector } from "react-redux";
+import SharedMessage from "../../components/SharedMessage";
 
 const GeneralApp = () => {
   const theme = useTheme()
@@ -30,7 +31,7 @@ switch (sidebar.type) {
     return  
  
   case "SHARED":
-    return  
+    return  <SharedMessage/>
  
 
   default:
