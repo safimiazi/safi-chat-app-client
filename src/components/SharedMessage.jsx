@@ -35,7 +35,22 @@ const SharedMessage = () => {
                     <Tab label="Docs" />
                 </Tabs>
                 <Stack sx={{ height: "100vh", position: "relative", flexGrow: 1, overflow: "auto" }} p={3} spacing={3}>
+{(()=>{
+switch (value) {
+    case 0:
+        //images
+        break;
+    case 1:
+        //links
+        break;
+    case 2:
+        //docs
+        break;
 
+    default:
+        break;
+}
+})()}
                 </Stack>
             </Stack>
         </Box>
