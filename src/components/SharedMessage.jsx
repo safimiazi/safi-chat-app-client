@@ -29,7 +29,7 @@ const SharedMessage = () => {
                     </Stack>
                 </Box>
                 {/* body */}
-                <Tabs value={value} onChange={handleChange} centered>
+                <Tabs sx={{px:2, pt: 2}} value={value} onChange={handleChange} centered>
                     <Tab label="Item One" />
                     <Tab label="Item Two" />
                     <Tab label="Item Three" />
