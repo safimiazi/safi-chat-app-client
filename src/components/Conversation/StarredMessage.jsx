@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { CaretLeft, } from 'phosphor-react';
 import { UpdateSidebarType } from '../../redux/slices/Apps';
+import Message from './Message';
 
 
 const StarredMessage = () => {
@@ -28,7 +29,7 @@ const StarredMessage = () => {
                 {/* body */}
 
                 <Stack sx={{ height: "100vh", position: "relative", flexGrow: 1, overflow: "auto" }} p={3} spacing={3}>
-
+                    <Message />
                 </Stack>
             </Stack>
         </Box>
