@@ -1,4 +1,4 @@
-import { Box, IconButton, Stack, Tab, Tabs, Typography, useTheme } from '@mui/material';
+import { Box, Grid, IconButton, Stack, Tab, Tabs, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { UpdateSidebarType } from '../redux/slices/Apps';
@@ -39,6 +39,9 @@ const SharedMessage = () => {
 switch (value) {
     case 0:
         //images
+        <Grid container spacing={2}>
+
+        </Grid>
         break;
     case 1:
         //links
