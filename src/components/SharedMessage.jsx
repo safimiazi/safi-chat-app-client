@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { UpdateSidebarType } from '../redux/slices/Apps';
 import { CaretLeft, X } from 'phosphor-react';
+import { faker } from '@faker-js/faker';
 
 const SharedMessage = () => {
     const theme = useTheme()
@@ -29,31 +30,37 @@ const SharedMessage = () => {
                     </Stack>
                 </Box>
                 {/* body */}
-                <Tabs sx={{px:2, pt: 2}} value={value} onChange={handleChange} centered>
+                <Tabs sx={{ px: 2, pt: 2 }} value={value} onChange={handleChange} centered>
                     <Tab label="Media" />
                     <Tab label="Links" />
                     <Tab label="Docs" />
                 </Tabs>
                 <Stack sx={{ height: "100vh", position: "relative", flexGrow: 1, overflow: "auto" }} p={3} spacing={3}>
-{(()=>{
-switch (value) {
-    case 0:
-        //images
-        <Grid container spacing={2}>
+                    {(() => {
+                        switch (value) {
+                            case 0:
+                                //images
+                                <Grid container spacing={2}>
+                                    {
+                                        [0, 1, 2, 3, 4, 5, 6].map((el) => {
+                                            <Grid item xs={4}>
+                                                <img src={faker.image.avatar()} alt={faker.name.fullName()} />
+                                            </Grid>
+                                        })
+                                    }
+                                </Grid>
+                                break;
+                            case 1:
+                                //links
+                                break;
+                            case 2:
+                                //docs
+                                break;
 
-        </Grid>
-        break;
-    case 1:
-        //links
-        break;
-    case 2:
-        //docs
-        break;
-
-    default:
-        break;
-}
-})()}
+                            default:
+                                break;
+                        }
+                    })()}
                 </Stack>
             </Stack>
         </Box>
