@@ -4,7 +4,6 @@ import styled from '@emotion/styled';
 import { Box, Fab, IconButton, InputAdornment, Stack, TextField, Tooltip } from '@mui/material';
 import { Camera, File, Image, LinkSimple, PaperPlaneTilt, Smiley, Sticker, User } from 'phosphor-react';
 import EmojiPicker from '@emoji-mart/react';
-import zIndex from '@mui/material/styles/zIndex';
 
 
 
