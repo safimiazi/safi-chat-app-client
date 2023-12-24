@@ -161,15 +161,21 @@ const Contact = () => {
                         </Stack>
                     </Stack>
                     <Stack direction={"row"} alignItems={"center"} spacing={2}>
-                        <Button startIcon={<Prohibit />} fullWidth variant='outlined'>
+                        <Button onClick={()=> {
+                            setOpenBlock(true)
+                        }} startIcon={<Prohibit />} fullWidth variant='outlined'>
                             Block
                         </Button>
-                        <Button startIcon={<Trash />} fullWidth variant='outlined'>
+                        <Button onClick={()=> {
+                            setOpenDelete(true)
+                        }} startIcon={<Trash />} fullWidth variant='outlined'>
                             Delete
                         </Button>
                     </Stack>
                 </Stack>
             </Stack>
+            {openBlock && <BlockDialog open={openBlock} handleClose={handleCloseBlock}/>}
+            {openDelete && <DeleteDialog open={openDelete} handleClose={handleCloseDelete}/>}
         </Box>
     );
 };
