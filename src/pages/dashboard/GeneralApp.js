@@ -6,11 +6,13 @@ import { useTheme } from "@emotion/react";
 import Contact from "../../components/Contact";
 import { useSelector } from "react-redux";
 import SharedMessage from "../../components/SharedMessage";
+import StarredComponent from "../../components/SharedMessage";
+import DefaultComponent from "../../components/SharedMessage";
 
 const GeneralApp = () => {
   const theme = useTheme()
-  const {sidebar} = useSelector((store)=> store.app);
-  
+  const { sidebar } = useSelector((store) => store.app);
+
   return (
     <Stack direction={"rew"} sx={{ width: "100%" }}>
       {/* chats */}
@@ -22,22 +24,23 @@ const GeneralApp = () => {
       </Box>
       {/* contact */}
       {
-        sidebar.open && (() => {
-switch (sidebar.type) {
-  case "CONTACT":
-    return  <Contact />
- 
-  case "STARRED":
-    return  
- 
-  case "SHARED":
-    return  <SharedMessage/>
- 
+        sidebar?.open && (() => {
+          switch (sidebar?.type) {
+            case "CONTACT":
+              return <Contact />;
 
-  default:
-    break;
-}
-        })
+            case "STARRED":
+              // return some component for "STARRED" case
+              return <StarredComponent />;
+
+            case "SHARED":
+              return <SharedMessage />;
+
+            default:
+              // return a default component or null if no match
+              return <DefaultComponent />;
+          }
+        })()
       }
     </Stack>
   );

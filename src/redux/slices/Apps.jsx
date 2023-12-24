@@ -5,7 +5,7 @@ import { dispatch } from "../Store";
 
 const initialState = {
     sidebar: {
-        open: true,
+        open: false,
         type: "CONTACT",
     }
 }
@@ -36,6 +36,7 @@ export function ToggleSidebar() {
 }
 
 export function UpdateSidebarType(type) {
+   
     return async () => {
         dispatch(
             slice.actions.updateSidebarType({

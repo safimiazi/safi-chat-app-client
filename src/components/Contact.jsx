@@ -2,7 +2,7 @@ import { Avatar, Box, Button, Divider, IconButton, Stack, Typography, useTheme }
 import { Bell, CaretRight, Phone, Prohibit, Star, Trash, VideoCamera, X } from 'phosphor-react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { ToggleSidebar } from '../redux/slices/Apps';
+import { ToggleSidebar, UpdateSidebarType } from '../redux/slices/Apps';
 import { faker } from '@faker-js/faker';
 import AntSwitch from './AntSwitch';
 const Contact = () => {
@@ -60,7 +60,9 @@ const Contact = () => {
                     <Divider />
                     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                         <Typography variant='subtitle2'>Media, Links & Docs</Typography>
-                        <Button endIcon={<CaretRight />}>401</Button>
+                        <Button onClick={()=>{
+                            dispatch(UpdateSidebarType("SHARED"))
+                        }} endIcon={<CaretRight />}>401</Button>
 
                     </Stack>
                     <Stack direction={"row"} spacing={2} alignItems={"center"}>
@@ -76,7 +78,9 @@ const Contact = () => {
                             <Star size={21} />
                             <Typography variant='subtitle2'>Starred Messages</Typography>
                         </Stack>
-                        <IconButton>
+                        <IconButton onClick={()=>{
+                            dispatch(UpdateSidebarType("STARRED"))
+                        }}>
                             <CaretRight />
                         </IconButton>
                     </Stack>
