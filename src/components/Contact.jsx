@@ -1,10 +1,38 @@
-import { Avatar, Box, Button, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, List, ListItem, ListItemAvatar, ListItemButton, ListItemText, Slide, Stack, Typography, useTheme } from '@mui/material';
 import { Bell, CaretRight, Phone, Prohibit, Star, Trash, VideoCamera, X } from 'phosphor-react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar, UpdateSidebarType } from '../redux/slices/Apps';
 import { faker } from '@faker-js/faker';
 import AntSwitch from './AntSwitch';
+
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
+
+const BlockDialog = ({open, handleClose}) => {
+    return (
+        <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>Block this Contact</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+           Are you sure you want to block this Contact?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Yes</Button>
+        </DialogActions>
+      </Dialog>
+    )
+}
 const Contact = () => {
     const theme = useTheme()
     const dispatch = useDispatch()
@@ -60,7 +88,7 @@ const Contact = () => {
                     <Divider />
                     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                         <Typography variant='subtitle2'>Media, Links & Docs</Typography>
-                        <Button onClick={()=>{
+                        <Button onClick={() => {
                             dispatch(UpdateSidebarType("SHARED"))
                         }} endIcon={<CaretRight />}>401</Button>
 
@@ -78,7 +106,7 @@ const Contact = () => {
                             <Star size={21} />
                             <Typography variant='subtitle2'>Starred Messages</Typography>
                         </Stack>
-                        <IconButton onClick={()=>{
+                        <IconButton onClick={() => {
                             dispatch(UpdateSidebarType("STARRED"))
                         }}>
                             <CaretRight />
