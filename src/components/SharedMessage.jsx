@@ -37,7 +37,7 @@ const SharedMessage = () => {
                     <Tab label="Links" />
                     <Tab label="Docs" />
                 </Tabs>
-                <Stack sx={{ height: "100vh", position: "relative", flexGrow: 1, overflow: "auto" }} p={3} spacing={3}>
+                <Stack sx={{ height: "100vh", position: "relative", flexGrow: 1, overflow: "auto" }} p={3} spacing={ value === 1 ? 1 :3}>
                     {(() => {
                         switch (value) {
                             case 0:
