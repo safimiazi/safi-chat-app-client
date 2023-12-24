@@ -60,6 +60,13 @@ const Contact = () => {
     const dispatch = useDispatch()
     const [openBlock, setOpenBlock] = useState(false)
     const [openDelete, setOpenDelete] = useState(false)
+
+    const handleCloseBlock = () => {
+        setOpenBlock(false)
+    }
+    const handleCloseDelete = () => {
+        setOpenDelete(false)
+    }
     return (
         <Box sx={{ width: "320px", height: "100vh" }}>
             <Stack sx={{ height: "100vh" }}>
