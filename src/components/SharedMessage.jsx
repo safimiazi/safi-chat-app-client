@@ -40,16 +40,16 @@ const SharedMessage = () => {
                         switch (value) {
                             case 0:
                                 //images
-                                <Grid container spacing={2}>
+                               return <Grid container spacing={2}>
                                     {
-                                        [0, 1, 2, 3, 4, 5, 6].map((el) => {
-                                            <Grid item xs={4}>
+                                        [0, 1, 2, 3, 4, 5, 6,7,8].map((el) => {
+                                           return <Grid item xs={4}>
                                                 <img src={faker.image.avatar()} alt={faker.name.fullName()} />
                                             </Grid>
                                         })
                                     }
                                 </Grid>
-                                break;
+                               
                             case 1:
                                 //links
                                 break;
