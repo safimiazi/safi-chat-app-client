@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { UpdateSidebarType } from '../redux/slices/Apps';
 import { CaretLeft, X } from 'phosphor-react';
 import { faker } from '@faker-js/faker';
-import { SHARED_LINKS } from '../data';
-import { LinkMsg } from './Conversation/MsgTypes';
+import { SHARED_DOCS, SHARED_LINKS } from '../data';
+import { DocMsg, LinkMsg } from './Conversation/MsgTypes';
 
 const SharedMessage = () => {
     const theme = useTheme()
@@ -58,7 +58,7 @@ const SharedMessage = () => {
                                 
                             case 2:
                                 //docs
-                                break;
+                                return SHARED_DOCS.map((el)=> <DocMsg el={el}/>)
 
                             default:
                                 break;
