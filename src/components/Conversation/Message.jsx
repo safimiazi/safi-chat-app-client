@@ -5,43 +5,37 @@ import { DocMsg, LinkMsg, MediaMsg, ReplyMsg, TextMsg, Timeline } from './MsgTyp
 
 const Message = () => {
     return (
-        <Box p={3}>
-            <Stack spacing={3}>
-                {Chat_History.map((el) => {
-                    switch (el.type) {
-                        case "divider":
-                            return <Timeline el={el} />;
-                        case "msg":
-                            switch (el.subtype) {
-                                case "img":
-                                    return <MediaMsg el={el} />
-
-                                case "doc":
-                                    //Doc msg
-                                 return   <DocMsg el={el}/>
-                                   
-                                case "Link":
-                                    //Link msg
-                                    return <LinkMsg el={el}></LinkMsg>
-
-                                case "reply":
-                                    //reply msg
-                                    return <ReplyMsg el={el} />
-
-                                default:
-                                    //text msg
-                                    return <TextMsg el={el} />
-
-                            }
-                            break;
-
-                        default:
-                            break;
-                    }
-                })}
-            </Stack>
-        </Box>
+      <Box p={3}>
+        <Stack spacing={3}>
+          {Chat_History.map((el) => {
+            switch (el.type) {
+              case "divider":
+                return <Timeline el={el} />;
+              case "msg":
+                switch (el.subtype) {
+                  case "img":
+                    return <MediaMsg el={el} />;
+                  case "doc":
+                    // Doc msg
+                    return <DocMsg el={el} />;
+                  case "link": // Fix: lowercase "link"
+                    // Link msg
+                    return <LinkMsg el={el}></LinkMsg>;
+                  case "reply":
+                    // reply msg
+                    return <ReplyMsg el={el} />;
+                  default:
+                    // text msg
+                    return <TextMsg el={el} />;
+                }
+              default:
+                break;
+            }
+          })}
+        </Stack>
+      </Box>
     );
-};
+  };
+  
 
 export default Message;
