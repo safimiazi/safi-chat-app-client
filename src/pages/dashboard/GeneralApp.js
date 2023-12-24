@@ -6,8 +6,8 @@ import { useTheme } from "@emotion/react";
 import Contact from "../../components/Contact";
 import { useSelector } from "react-redux";
 import SharedMessage from "../../components/SharedMessage";
-import StarredComponent from "../../components/SharedMessage";
 import DefaultComponent from "../../components/SharedMessage";
+import StarredMessage from "../../components/Conversation/StarredMessage";
 
 const GeneralApp = () => {
   const theme = useTheme()
@@ -31,7 +31,7 @@ const GeneralApp = () => {
 
             case "STARRED":
               // return some component for "STARRED" case
-              return <StarredComponent />;
+              return <StarredMessage />;
 
             case "SHARED":
               return <SharedMessage />;
