@@ -30,9 +30,9 @@ const SharedMessage = () => {
                 </Box>
                 {/* body */}
                 <Tabs sx={{px:2, pt: 2}} value={value} onChange={handleChange} centered>
-                    <Tab label="Item One" />
-                    <Tab label="Item Two" />
-                    <Tab label="Item Three" />
+                    <Tab label="Media" />
+                    <Tab label="Links" />
+                    <Tab label="Docs" />
                 </Tabs>
                 <Stack sx={{ height: "100vh", position: "relative", flexGrow: 1, overflow: "auto" }} p={3} spacing={3}>
 
