@@ -3,7 +3,7 @@ import React from 'react';
 const SharedMessage = () => {
     return (
         <div>
-            
+            SharedMessage
         </div>
     );
 };
