@@ -1,6 +1,6 @@
 import { Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, IconButton, List, ListItem, ListItemAvatar, ListItemButton, ListItemText, Slide, Stack, Typography, useTheme } from '@mui/material';
 import { Bell, CaretRight, Phone, Prohibit, Star, Trash, VideoCamera, X } from 'phosphor-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar, UpdateSidebarType } from '../redux/slices/Apps';
 import { faker } from '@faker-js/faker';
@@ -58,6 +58,8 @@ const DeleteDialog = ({open, handleClose}) => {
 const Contact = () => {
     const theme = useTheme()
     const dispatch = useDispatch()
+    const [openBlock, setOpenBlock] = useState(false)
+    const [openDelete, setOpenDelete] = useState(false)
     return (
         <Box sx={{ width: "320px", height: "100vh" }}>
             <Stack sx={{ height: "100vh" }}>
