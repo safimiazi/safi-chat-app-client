@@ -21,7 +21,22 @@ const GeneralApp = () => {
       </Box>
       {/* contact */}
       {
-        sidebar.open && <Contact />
+        sidebar.open && (() => {
+switch (sidebar.type) {
+  case "CONTACT":
+    return  <Contact />
+ 
+  case "STARRED":
+    return  
+ 
+  case "SHARED":
+    return  
+ 
+
+  default:
+    break;
+}
+        })
       }
     </Stack>
   );
