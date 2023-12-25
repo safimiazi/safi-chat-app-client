@@ -6,12 +6,12 @@ const Settings = () => {
         <>
           <Stack direction={"row"} sx={{width: "100%"}}>
 {/* left pannel */}
-<Box>
+<Box sx={{overflowY: "auto",height:"100vh",width: 320}}>
 
 </Box>
 {/* right pannel */}
 <Box>
-    
+
 </Box>
           </Stack>
         </>
