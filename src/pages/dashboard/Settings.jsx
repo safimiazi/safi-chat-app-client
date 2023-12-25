@@ -1,4 +1,4 @@
-import { Stack } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import React from 'react';
 
 const Settings = () => {
@@ -6,6 +6,9 @@ const Settings = () => {
         <>
           <Stack direction={"row"} sx={{width: "100%"}}>
 {/* left pannel */}
+<Box>
+    
+</Box>
 {/* right pannel */}
           </Stack>
         </>
