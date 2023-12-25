@@ -103,11 +103,11 @@ const Shortcuts = ({ open, handleClose }) => {
                 fullWidth maxWidth="md" sx={{ p: 4 }}
             >
                 <DialogTitle>Keyboard Shortcuts</DialogTitle>
-                <DialogContent sx={{ mt: 4 }}>
+                <DialogContent sx={{ mt: 3 }}>
                     <Grid container spacing={2}>
                         {list.map(({ key, title, combination }) => (
                            
-                            <Grid item xs={6}>
+                            <Grid key={key} container item xs={6}>
                                 <Stack sx={{ width: "100%" }} justifyContent="space-between" spacing={3} direction={"row"} alignItems={"center"}>
                                     <Typography variant='caption' sx={{ fontSize: 14 }}>{title}</Typography>
                                     <Stack spacing={2} direction={"row"}>
