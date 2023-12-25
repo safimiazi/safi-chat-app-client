@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { Avatar, Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { Avatar, Box, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import { Bell, CaretLeft, Image, Info, Key, Keyboard, Lock, Note, PencilCircle } from 'phosphor-react';
 import React from 'react';
 
@@ -91,6 +91,7 @@ const Settings = () => {
 <Stack direction={"row"} spacing={2} alignItems={"center"}>
 {icon}
 <Typography variant="body2">{title}</Typography>
+{key !== 7 && <Divider/>}
 </Stack>
                                 </Stack>
                             </>)}
