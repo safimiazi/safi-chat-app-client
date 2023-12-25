@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import FormProvider from '../../components/hook-form/FormProvider';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
-import { YupResolver } from "@hookform/resolvers"
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Alert, Stack } from '@mui/material';
+import { RHFTextField } from '../../components/hook-form';
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
 
@@ -18,7 +19,7 @@ const LoginForm = () => {
     }
 
     const methods = useForm({
-        resolver: YupResolver(LoginForm),
+        resolver: yupResolver(LoginForm),
         defaultValues,
     });
 
@@ -42,6 +43,8 @@ const LoginForm = () => {
 <Stack spacing={3}>
 {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
 </Stack>
+
+<RHFTextField name="email" label="Email address"/>
         </FormProvider>
     );
 };
