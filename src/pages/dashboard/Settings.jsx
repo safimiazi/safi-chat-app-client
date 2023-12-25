@@ -1,10 +1,13 @@
+import { Stack } from '@mui/material';
 import React from 'react';
 
 const Settings = () => {
     return (
-        <div>
+        <>
+          <Stack>
             
-        </div>
+          </Stack>
+        </>
     );
 };
 
