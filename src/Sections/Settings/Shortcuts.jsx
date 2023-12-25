@@ -4,15 +4,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
   });
 const Shortcuts = ({ open, handleClose }) => {
-    const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+
     return (
         <>
             <Dialog
@@ -20,7 +14,7 @@ const Shortcuts = ({ open, handleClose }) => {
                 TransitionComponent={Transition}
                 keepMounted
                 onClose={handleClose}
-                aria-describedby="alert-dialog-slide-description"
+                fullWidth maxWidth="md" sx={{p:4}}
             >
             </Dialog>
         </>
