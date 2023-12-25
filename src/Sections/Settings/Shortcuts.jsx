@@ -16,7 +16,7 @@ const Shortcuts = ({ open, handleClose }) => {
                 onClose={handleClose}
                 fullWidth maxWidth="md" sx={{p:4}}
             >
-                <DialogTitle></DialogTitle>
+                <DialogTitle>Keyboard Shortcuts</DialogTitle>
             </Dialog>
         </>
     );
