@@ -1,18 +1,11 @@
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Slide, Stack, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Slide, Stack, Typography } from '@mui/material';
+import React from 'react';
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 const Shortcuts = ({ open, handleClose }) => {
 
-    const [openShortcuts, setOpenShortcuts] = useState(false)
-
-    const handleOpenShortcuts = ()=> {
-        setOpenShortcuts(true)
-    }
-    const handleCloseShortcuts = ()=> {
-        setOpenShortcuts(false)
-    }
+  
     const list = [
         {
             key: 0,

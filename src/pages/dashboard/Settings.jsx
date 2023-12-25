@@ -1,12 +1,19 @@
 import { faker } from '@faker-js/faker';
 import { Avatar, Box, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import { Bell, CaretLeft, Image, Info, Key, Keyboard, Lock, Note, PencilCircle } from 'phosphor-react';
-import React from 'react';
+import React, { useState } from 'react';
 import Shortcuts from '../../Sections/Settings/Shortcuts';
 
 const Settings = () => {
     const theme = useTheme()
+    const [openShortcuts, setOpenShortcuts] = useState(false)
 
+    const handleOpenShortcuts = ()=> {
+        setOpenShortcuts(true)
+    }
+    const handleCloseShortcuts = ()=> {
+        setOpenShortcuts(false)
+    }
     const list = [
         {
             key: 0,
@@ -48,7 +55,7 @@ const Settings = () => {
             key: 6,
             icon: <Keyboard size={20} />,
             title: "Keyboard Shortcuts",
-            onclick: () => { },
+            onclick:handleOpenShortcuts,
         },
         {
             key: 7,
@@ -101,7 +108,8 @@ const Settings = () => {
                 </Box>
                 {/* right pannel */}
                 <Box>
-<Shortcuts open={true} handleClose={()=> {}}/>
+                    {openShortcuts && <Shortcuts open={openShortcuts} handleClose={handleCloseShortcuts}/>
+}
                 </Box>
             </Stack>
         </>
