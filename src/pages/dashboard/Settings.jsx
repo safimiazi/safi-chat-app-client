@@ -8,54 +8,54 @@ const Settings = () => {
 
     const list = [
         {
-            key:0,
-            icon: <Bell size={20}/>,
+            key: 0,
+            icon: <Bell size={20} />,
             title: "Notifications",
-            onclick: () => {},
+            onclick: () => { },
         },
         {
-            key:1,
-            icon: <Lock size={20}/>,
+            key: 1,
+            icon: <Lock size={20} />,
             title: "Privacy",
-            onclick: () => {},
+            onclick: () => { },
         },
         {
-            key:2,
-            icon: <Key size={20}/>,
+            key: 2,
+            icon: <Key size={20} />,
             title: "Security",
-            onclick: () => {},
+            onclick: () => { },
         },
         {
-            key:3,
-            icon: <PencilCircle size={20}/>,
+            key: 3,
+            icon: <PencilCircle size={20} />,
             title: "Theme",
-            onclick: () => {},
+            onclick: () => { },
         },
         {
-            key:4,
-            icon: <Image size={20}/>,
+            key: 4,
+            icon: <Image size={20} />,
             title: "Chat Wallpaper",
-            onclick: () => {},
+            onclick: () => { },
         },
         {
-            key:5,
-            icon: <Note size={20}/>,
+            key: 5,
+            icon: <Note size={20} />,
             title: "Request Account Info",
-            onclick: () => {},
+            onclick: () => { },
         },
         {
-            key:6,
-            icon: <Keyboard size={20}/>,
+            key: 6,
+            icon: <Keyboard size={20} />,
             title: "Keyboard Shortcuts",
-            onclick: () => {},
+            onclick: () => { },
         },
         {
-            key:7,
-            icon: <Info size={20}/>,
+            key: 7,
+            icon: <Info size={20} />,
             title: "Help",
-            onclick: () => {},
+            onclick: () => { },
         },
-       
+
     ]
     return (
         <>
@@ -85,7 +85,15 @@ const Settings = () => {
                             </Stack>
                         </Stack>
                         {/* list of option */}
-                        
+                        <Stack spacing={4}>
+                            {list.map(({ key, icon, title, onclick }) => <>
+                                <Stack spacing={2} sx={{ cursor: "pointer" }} onClick={onclick}>
+<Stack direction={"row"} spacing={2} alignItems={"center"}>
+
+</Stack>
+                                </Stack>
+                            </>)}
+                        </Stack>
                     </Stack>
                 </Box>
                 {/* right pannel */}
