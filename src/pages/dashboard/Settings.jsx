@@ -4,8 +4,8 @@ import React from 'react';
 const Settings = () => {
     return (
         <>
-          <Stack>
-            
+          <Stack direction={"row"}>
+
           </Stack>
         </>
     );
