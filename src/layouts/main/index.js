@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import React from "react";
 import { Outlet } from "react-router-dom";
 
@@ -6,7 +6,11 @@ const MainLayout = () => {
   return (
     <>
     <Container>
-      <div>Main Layout</div>
+      <Stack spacing={5}>
+<Stack sx={{width:"100%"}} direction={"column"} alignItems={"center"}>
+
+</Stack>
+      </Stack>
 
       <Outlet />
       </Container>
