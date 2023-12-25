@@ -100,7 +100,7 @@ const Shortcuts = ({ open, handleClose }) => {
                 TransitionComponent={Transition}
                 keepMounted
                 onClose={handleClose}
-                fullWidth maxWidth="md" sx={{ p: 4 }}
+                fullWidth maxWidth="md" sx={{ p: 2 }}
             >
                 <DialogTitle>Keyboard Shortcuts</DialogTitle>
                 <DialogContent sx={{ mt: 3 }}>
@@ -126,7 +126,7 @@ const Shortcuts = ({ open, handleClose }) => {
                     </Grid>
                 </DialogContent>
                 <DialogActions>
-                    
+                    <Button variant='contained' onClick={handleClose}>Ok</Button>
                 </DialogActions>
             </Dialog>
         </>
