@@ -7,7 +7,7 @@ import LoginForm from '../../Sections/Auth/LoginForm';
 const Login = () => {
     return (
         <>
-            <Stack spacing={1} sx={{ mb: 5, position: "relative" }}>
+            <Stack spacing={3} sx={{ mb: 5, position: "relative" }}>
                 <Typography variant="h4">Login to Safichat</Typography>
                 <Stack direction={"row"} spacing={0.5}>
                     <Typography variant='body2'>New User?</Typography>
