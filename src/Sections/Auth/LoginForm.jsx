@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import FormProvider from '../../components/hook-form/FormProvider';
 
 const LoginForm = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
+    const LoginSchema =
     return (
-        <div>
+        <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
             
-        </div>
+        </FormProvider>
     );
 };
 
