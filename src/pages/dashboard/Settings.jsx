@@ -4,7 +4,7 @@ import React from 'react';
 const Settings = () => {
     return (
         <>
-          <Stack direction={"row"}>
+          <Stack direction={"row"} sx={{width: "100%"}}>
 
           </Stack>
         </>
