@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker';
 import { Avatar, Box, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import { Bell, CaretLeft, Image, Info, Key, Keyboard, Lock, Note, PencilCircle } from 'phosphor-react';
 import React from 'react';
+import Shortcuts from '../../Sections/Settings/Shortcuts';
 
 const Settings = () => {
     const theme = useTheme()
@@ -100,7 +101,7 @@ const Settings = () => {
                 </Box>
                 {/* right pannel */}
                 <Box>
-
+<Shortcuts open={true} handleClose={()=> {}}/>
                 </Box>
             </Stack>
         </>
