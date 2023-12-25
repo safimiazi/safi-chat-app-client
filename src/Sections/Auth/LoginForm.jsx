@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import FormProvider from '../../components/hook-form/FormProvider';
 import * as Yup from 'yup';
-import {useForm} from 'react-hook-form'
-import {YupResolver} from "@hookform/resolvers"
+import { useForm } from 'react-hook-form'
+import { YupResolver } from "@hookform/resolvers"
+import { Stack } from '@mui/material';
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
 
@@ -21,13 +22,13 @@ const LoginForm = () => {
         defaultValues,
     });
 
-    const {reset, setError, handleSubmit, formState:{errors, isSubmitting, isSubmittingSuccessful}} = methods;
-    
+    const { reset, setError, handleSubmit, formState: { errors, isSubmitting, isSubmittingSuccessful } } = methods;
+
     const onSubmit = async (data) => {
-        try{
-//submit data to backend
+        try {
+            //submit data to backend
         }
-        catch(error) {
+        catch (error) {
             console.log(error);
             reset();
             setError("afterSubmit", {
@@ -38,7 +39,9 @@ const LoginForm = () => {
     }
     return (
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-            
+<Stack spacing={3}>
+
+</Stack>
         </FormProvider>
     );
 };
