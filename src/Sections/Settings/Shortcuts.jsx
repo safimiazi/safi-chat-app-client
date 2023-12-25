@@ -6,6 +6,13 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const Shortcuts = ({ open, handleClose }) => {
 
     const [openShortcuts, setOpenShortcuts] = useState(false)
+
+    const handleOpenShortcuts = ()=> {
+        setOpenShortcuts(true)
+    }
+    const handleCloseShortcuts = ()=> {
+        setOpenShortcuts(false)
+    }
     const list = [
         {
             key: 0,
