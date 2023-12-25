@@ -6,6 +6,7 @@ const Settings = () => {
         <>
           <Stack direction={"row"} sx={{width: "100%"}}>
 {/* left pannel */}
+{/* right pannel */}
           </Stack>
         </>
     );
