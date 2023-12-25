@@ -3,8 +3,9 @@ import FormProvider from '../../components/hook-form/FormProvider';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert, Stack } from '@mui/material';
+import { Alert, IconButton, InputAdornment, Stack } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
+import { Eye, EyeSlash } from 'phosphor-react';
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
 
@@ -40,11 +41,22 @@ const LoginForm = () => {
     }
     return (
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-<Stack spacing={3}>
-{!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
-</Stack>
+            <Stack spacing={3}>
+                {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
+            </Stack>
 
-<RHFTextField name="email" label="Email address"/>
+            <RHFTextField name="email" label="Email address" />
+            <RHFTextField name="password" label="Password" type={showPassword ? "text" : "password"} InputProps={{
+                endAdornment: (
+                    <InputAdornment>
+                        <IconButton onClick={() => {
+                            setShowPassword(!showPassword)
+                        }}>
+                            {showPassword ? <Eye /> : <EyeSlash />}
+                        </IconButton>
+                    </InputAdornment>
+                )
+            }} />
         </FormProvider>
     );
 };
