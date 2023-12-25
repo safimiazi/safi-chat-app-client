@@ -62,7 +62,7 @@ const Settings = () => {
             <Stack direction={"row"} sx={{ width: "100%" }}>
                 {/* left pannel */}
                 <Box sx={{ overflowY: "auto", height: "100vh", width: 320, backgroundColor: theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background, boxShadow: "0px 0px 2px rgba(0,0,0, 0.25)" }}>
-                    <Stack p={4} spacing={5}>
+                    <Stack p={4} spacing={3}>
                         {/* header */}
                         <Stack direction={"row"} alignItems={"center"} spacing={3}>
                             <IconButton>
@@ -73,7 +73,7 @@ const Settings = () => {
                             </Typography>
                         </Stack>
                         {/* profile */}
-                        <Stack direction={"row"} spacing={3}>
+                        <Stack direction={"row"} spacing={2}>
                             <Avatar sx={{ width: 56, height: 56 }} src={faker.image.avatar()} alt={faker.name.fullName()} />
                             <Stack spacing={0.5}>
                                 <Typography variant='body2'>
@@ -88,11 +88,11 @@ const Settings = () => {
                         <Stack spacing={4}>
                             {list.map(({ key, icon, title, onclick }) => <>
                                 <Stack spacing={2} sx={{ cursor: "pointer" }} onClick={onclick}>
-<Stack direction={"row"} spacing={2} alignItems={"center"}>
-{icon}
-<Typography variant="body2">{title}</Typography>
-{key !== 7 && <Divider/>}
-</Stack>
+                                    <Stack direction={"row"} spacing={2} alignItems={"center"}>
+                                        {icon}
+                                        <Typography variant="body2">{title}</Typography> 
+                                    </Stack>
+                                    {key !== 7 && <Divider />}
                                 </Stack>
                             </>)}
                         </Stack>
