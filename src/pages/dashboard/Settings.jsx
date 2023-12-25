@@ -5,7 +5,7 @@ const Settings = () => {
     return (
         <>
           <Stack direction={"row"} sx={{width: "100%"}}>
-
+{/* left pannel */}
           </Stack>
         </>
     );
