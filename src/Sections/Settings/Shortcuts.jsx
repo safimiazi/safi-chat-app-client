@@ -108,7 +108,7 @@ const list = [
 {list.map(({key, title, combination})=> <Box key={key}>
 <Grid item xs={6}>
     <Stack sx={{width: "100%"}} justifyContent="space-between" spacing={3} direction={"row"} alignItems={"center"}>
-<Typography></Typography>
+<Typography variant='caption' sx={{fontSize: 14}}>{title}</Typography>
     </Stack>
 </Grid>
 </Box>
