@@ -89,7 +89,8 @@ const Settings = () => {
                             {list.map(({ key, icon, title, onclick }) => <>
                                 <Stack spacing={2} sx={{ cursor: "pointer" }} onClick={onclick}>
 <Stack direction={"row"} spacing={2} alignItems={"center"}>
-
+{icon}
+<Typography variant="body2">{title}</Typography>
 </Stack>
                                 </Stack>
                             </>)}
