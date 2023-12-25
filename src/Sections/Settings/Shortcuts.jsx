@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogTitle, Grid, Slide } from '@mui/material';
+import { Dialog, DialogContent, DialogTitle, Grid, Slide, Stack } from '@mui/material';
 import React from 'react';
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -105,7 +105,14 @@ const list = [
                 <DialogTitle>Keyboard Shortcuts</DialogTitle>
                 <DialogContent sx={{ mt: 4 }}>
                     <Grid container spacing={3}>
+{list.map(({key, title, combination})=> <>
+<Grid item xs={6}>
+    <Stack>
 
+    </Stack>
+</Grid>
+</>
+)}
                     </Grid>
                 </DialogContent>
             </Dialog>
