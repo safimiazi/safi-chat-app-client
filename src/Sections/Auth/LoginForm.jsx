@@ -23,7 +23,19 @@ const LoginForm = () => {
 
     const {reset, setError, handleSubmit, formState:{errors, isSubmitting, isSubmittingSuccessful}} = methods;
     
-    
+    const onSubmit = async (data) => {
+        try{
+//submit data to backend
+        }
+        catch(error) {
+            console.log(error);
+            reset();
+            setError("afterSubmit", {
+                ...error,
+                message: error.message,
+            })
+        }
+    }
     return (
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
             
