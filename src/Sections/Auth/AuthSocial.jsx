@@ -10,7 +10,7 @@ const AuthSocial = () => {
 <IconButton>
     <GoogleLogo color='#DF3E30'/>
 </IconButton>
-<IconButton>
+<IconButton color='inherit'>
     <GithubLogo />
 </IconButton>
 <IconButton>
