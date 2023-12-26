@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FormProvider from '../../components/hook-form/FormProvider';
+import {Link as RouterLink} from "react-router-dom"
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -60,7 +61,7 @@ const LoginForm = () => {
              </Stack>
 
              <Stack alignItems={"flex-end"} sx={{my: 2}}>
-                <Link variant='body2' color={"inherit"} underline='always'>
+                <Link component={RouterLink} to="/auth/reset-password" variant='body2' color={"inherit"} underline='always'>
                 Forgot Password?
                 </Link>
              </Stack>
