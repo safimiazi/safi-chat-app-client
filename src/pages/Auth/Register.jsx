@@ -14,6 +14,7 @@ const Register = () => {
                 </Typography>
                 <Link component={RouterLink} to="/auth/login">Sign in</Link>
             </Stack>
+            {/* Register Form */}
         </Stack>
     );
 };
