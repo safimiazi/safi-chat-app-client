@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import FormProvider from '../../components/hook-form/FormProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Alert, Stack } from '@mui/material';
+import { RHFTextField } from '../../components/hook-form';
 
 const RegisterForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -44,9 +45,14 @@ const RegisterForm = () => {
     }
     return (
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
- <Stack spacing={3}>
+            <Stack spacing={3}>
                 {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
-</Stack>
+                <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+                    <RHFTextField name={"firstName"} label="First Name" />
+                    <RHFTextField name={"lastName"} label="Last Name" />
+                </Stack>
+
+            </Stack>
         </FormProvider>
 
     );
