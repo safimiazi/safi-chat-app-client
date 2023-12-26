@@ -20,7 +20,7 @@ const LoginForm = () => {
     }
 
     const methods = useForm({
-        resolver: yupResolver(LoginForm),
+        resolver: yupResolver(LoginSchema),
         defaultValues,
     });
 
