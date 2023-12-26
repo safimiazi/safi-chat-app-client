@@ -4,7 +4,9 @@ import * as Yup from 'yup';
 const RegisterForm = () => {
     const [showPassword, setShowPassword] = useState(false);
 
-    const LoginSchema = Yup.object().shape({
+    const RegisterSchema = Yup.object().shape({
+        firstName: Yup.string().required("First Name is required"),
+        lastName: Yup.string().required("Last Name is required"),
         email: Yup.string().required("Email is required").email("Email must be a valid email address"),
         password: Yup.string().required("password is required"),
     });
@@ -15,7 +17,7 @@ const RegisterForm = () => {
     }
 
     const methods = useForm({
-        resolver: yupResolver(LoginSchema),
+        resolver: yupResolver(RegisterSchema),
         defaultValues,
     });
 
