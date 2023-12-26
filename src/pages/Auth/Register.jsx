@@ -16,7 +16,7 @@ const Register = () => {
             </Stack>
             {/* Register Form */}
             <Typography component={"div"} sx={{ color: "text.secondary", mt: 3, typography: "caption", textAlign: "center" }}>
-                {"By Signing up, I agree to"}
+                {"By Signing up, I agree to "}
                 <Link underline='always' color={"text.primary"}>
                     Terms of service
                 </Link>
