@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FormProvider from '../../components/hook-form/FormProvider';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert, Button, IconButton, InputAdornment, Link, Stack } from '@mui/material';
+import { Alert, Button, Stack } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
-import { Eye, EyeSlash } from 'phosphor-react';
 const ResetPasswordForm = () => {
 
-    const LoginSchema = Yup.object().shape({
+    const ResetPasswordSchema = Yup.object().shape({
         email: Yup.string().required("Email is required").email("Email must be a valid email address"),
-        password: Yup.string().required("password is required"),
+ 
     });
 
     const defaultValues = {
@@ -19,7 +18,7 @@ const ResetPasswordForm = () => {
     }
 
     const methods = useForm({
-        resolver: yupResolver(LoginSchema),
+        resolver: yupResolver(ResetPasswordSchema),
         defaultValues,
     });
 
