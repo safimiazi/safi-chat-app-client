@@ -1,6 +1,7 @@
 import { Link, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from "react-router-dom"
 import React from 'react';
+import RegisterForm from '../../Sections/Auth/RegisterForm';
 
 const Register = () => {
     return (
@@ -15,6 +16,8 @@ const Register = () => {
                 <Link component={RouterLink} to="/auth/login">Sign in</Link>
             </Stack>
             {/* Register Form */}
+            <RegisterForm/>
+
             <Typography component={"div"} sx={{ color: "text.secondary", mt: 3, typography: "caption", textAlign: "center" }}>
                 {"By Signing up, I agree to "}
                 <Link underline='always' color={"text.primary"}>

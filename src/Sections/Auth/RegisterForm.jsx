@@ -3,8 +3,9 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import FormProvider from '../../components/hook-form/FormProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert, Stack } from '@mui/material';
+import { Alert, IconButton, InputAdornment, Stack } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
+import { Eye, EyeSlash } from 'phosphor-react';
 
 const RegisterForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -51,7 +52,18 @@ const RegisterForm = () => {
                     <RHFTextField name={"firstName"} label="First Name" />
                     <RHFTextField name={"lastName"} label="Last Name" />
                 </Stack>
-
+                <RHFTextField name={"email"} label="Email" />
+                <RHFTextField name={"password"} label="Password" type={showPassword ? "text" : "password"} InputProps={{
+                endAdornment: (
+                    <InputAdornment>
+                        <IconButton onClick={() => {
+                            setShowPassword(!showPassword)
+                        }}>
+                            {showPassword ? <Eye /> : <EyeSlash />}
+                        </IconButton>
+                    </InputAdornment>
+                )
+            }} />
             </Stack>
         </FormProvider>
 
