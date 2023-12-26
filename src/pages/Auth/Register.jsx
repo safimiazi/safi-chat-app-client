@@ -7,6 +7,11 @@ const Register = () => {
             <Typography variant='h4'>
                 Get Started With SafiChat
             </Typography>
+            <Stack  direction={"row"} spacing={0.5}>
+<Typography>
+Already have a n account?
+</Typography>
+            </Stack>
         </Stack>
     );
 };
