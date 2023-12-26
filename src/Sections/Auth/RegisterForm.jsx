@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
+import { useForm } from 'react-hook-form'
+import FormProvider from '../../components/hook-form/FormProvider';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const RegisterForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -39,9 +42,10 @@ const RegisterForm = () => {
         }
     }
     return (
-        <div>
-            
-        </div>
+        <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+
+        </FormProvider>
+
     );
 };
 
