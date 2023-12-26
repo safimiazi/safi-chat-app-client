@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import FormProvider from '../../components/hook-form/FormProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert, IconButton, InputAdornment, Stack } from '@mui/material';
+import { Alert, Button, IconButton, InputAdornment, Stack } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
 import { Eye, EyeSlash } from 'phosphor-react';
 
@@ -54,17 +54,36 @@ const RegisterForm = () => {
                 </Stack>
                 <RHFTextField name={"email"} label="Email" />
                 <RHFTextField name={"password"} label="Password" type={showPassword ? "text" : "password"} InputProps={{
-                endAdornment: (
-                    <InputAdornment>
-                        <IconButton onClick={() => {
-                            setShowPassword(!showPassword)
-                        }}>
-                            {showPassword ? <Eye /> : <EyeSlash />}
-                        </IconButton>
-                    </InputAdornment>
-                )
-            }} />
+                    endAdornment: (
+                        <InputAdornment>
+                            <IconButton onClick={() => {
+                                setShowPassword(!showPassword)
+                            }}>
+                                {showPassword ? <Eye /> : <EyeSlash />}
+                            </IconButton>
+                        </InputAdornment>
+                    )
+                }} />
+                <Button
+                    fullWidth
+                    color="inherit"
+                    size='large'
+                    type='submit'
+                    variant='contained'
+                    sx={{
+                        bgcolor: "text.primary",
+                        color: (theme) => theme.palette.mode === "light" ? "common.white" : "grey.800",
+                        '&:hover': {
+                            bgcolor: "text.primary",
+                            color: (theme) => theme.palette.mode === "light" ? "common.white" : "grey.800",
+                        },
+                    }}
+                >
+                    Create Account
+                </Button>
             </Stack>
+
+
         </FormProvider>
 
     );

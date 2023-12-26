@@ -2,6 +2,7 @@ import { Link, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from "react-router-dom"
 import React from 'react';
 import RegisterForm from '../../Sections/Auth/RegisterForm';
+import AuthSocial from '../../Sections/Auth/AuthSocial';
 
 const Register = () => {
     return (
@@ -28,6 +29,7 @@ const Register = () => {
                     Privacy Policy
                 </Link>
             </Typography>
+            <AuthSocial/>
         </Stack>
     );
 };
