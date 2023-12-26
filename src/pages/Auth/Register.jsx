@@ -1,4 +1,5 @@
-import { Stack, Typography } from '@mui/material';
+import { Link, Stack, Typography } from '@mui/material';
+import {Link as RouterLink} from "react-router-dom"
 import React from 'react';
 
 const Register = () => {
@@ -11,6 +12,7 @@ const Register = () => {
 <Typography>
 Already have a n account?
 </Typography>
+<Link component={RouterLink} to="/auth/login">Sign in</Link>
             </Stack>
         </Stack>
     );
