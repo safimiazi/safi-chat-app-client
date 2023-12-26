@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import FormProvider from '../../components/hook-form/FormProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Alert, Stack } from '@mui/material';
 
 const RegisterForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -43,7 +44,9 @@ const RegisterForm = () => {
     }
     return (
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-
+ <Stack spacing={3}>
+                {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
+</Stack>
         </FormProvider>
 
     );
