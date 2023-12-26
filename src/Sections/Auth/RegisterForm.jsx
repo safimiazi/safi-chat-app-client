@@ -12,6 +12,8 @@ const RegisterForm = () => {
     });
 
     const defaultValues = {
+        firstName: "",
+        lastName: "",
         email: "demo@safichat.com",
         password: "demo1234"
     }
