@@ -15,6 +15,11 @@ const Register = () => {
                 <Link component={RouterLink} to="/auth/login">Sign in</Link>
             </Stack>
             {/* Register Form */}
+            <Typography component={"div"} sx={{color: "text.secondary", mt:3, typography:"caption", textAlign: "center"}}>
+{"By Signing up, I agree to"}
+<Link>
+</Link>
+            </Typography>
         </Stack>
     );
 };
