@@ -1,10 +1,11 @@
+import { Stack } from '@mui/material';
 import React from 'react';
 
 const Register = () => {
     return (
-        <div>
+        <Stack spacing={3} sx={{ mb: 5, position: "relative" }}>
             
-        </div>
+        </Stack>
     );
 };
 
