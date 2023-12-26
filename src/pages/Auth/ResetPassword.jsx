@@ -14,7 +14,9 @@ const ResetPassword = () => {
                     Please enter the emeil address associated with your account and we
                     will email you a link to reset your password.
                 </Typography>
+                
                 {/* reset password form */}
+
                 <Link component={RouterLink} to="/auth/login" color="inherit" variant='subtitle2' sx={{mt:3, mx:"auto", alignItems: "center", display: "inline-flex"}}>
                 <CaretLeft/>
                 Return to sign in
