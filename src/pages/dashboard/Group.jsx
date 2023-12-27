@@ -1,9 +1,10 @@
-import { Box, IconButton, Link, Stack, Typography } from '@mui/material';
+import { Box, IconButton, Link, Stack, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
 import { MagnifyingGlass, Plus } from 'phosphor-react';
 
 const Group = () => {
+    const theme = useTheme()
     return (
         <>
             <Stack direction={"row"} sx={{ width: "100%" }}>
