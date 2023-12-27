@@ -2,6 +2,9 @@ import { Box, Divider, IconButton, Link, Stack, Typography, useTheme } from '@mu
 import React from 'react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
 import { MagnifyingGlass, Plus } from 'phosphor-react';
+import { SimpleBarStyle } from '../../components/Scrollbar';
+import { ChatList } from '../../data';
+import ChatElement from '../../components/ChatElements';
 
 const Group = () => {
     const theme = useTheme()
@@ -29,11 +32,28 @@ const Group = () => {
                         </Stack>
                         <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
                             <Typography variant='subtitle2' component={Link}>Create New Group</Typography>
-                        <IconButton>
-                            <Plus style={{color: theme.palette.primary.main}}/>
-                        </IconButton>
+                            <IconButton>
+                                <Plus style={{ color: theme.palette.primary.main }} />
+                            </IconButton>
                         </Stack>
-                        <Divider/>
+                        <Divider />
+                        <Stack sx={{ flexGrow: 1, overflowY: "auto", height: "100%" }}>
+                            <SimpleBarStyle timeout={500} clickOnTrack={false}>
+                                <Stack>
+                                    {/*  */}
+                                    <Typography>Pinned</Typography>
+                                    {/* chat list */}
+                                    {ChatList.filter((el) => el.pinned).map((el) => {
+                                        return <ChatElement {...el}></ChatElement>
+                                    })}
+                                </Stack>
+                                <Stack>
+                                    {/*  */}
+                                    <Typography>All Groups</Typography>
+                                    {/* chat list */}
+                                </Stack>
+                            </SimpleBarStyle>
+                        </Stack>
                     </Stack>
                 </Box>
                 {/* Right */}
