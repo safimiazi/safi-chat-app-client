@@ -1,4 +1,4 @@
-import { Box, Stack } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 const Group = () => {
@@ -12,9 +12,14 @@ const Group = () => {
                     width: 320,
                     boxShadow: "0px 0px 2px rgba(0,0, 0, 0.25)"
                 }}>
-<Stack p={3} spacing={2} sx={{maxHeight: "100vh"}}>
+                    <Stack p={3} spacing={2} sx={{ maxHeight: "100vh" }}>
+                        <Stack>
+                            <Typography variant='h5'>Groups</Typography>
+                        </Stack>
+                        <Stack sx={{ width: "100%" }}>
 
-</Stack>
+                        </Stack>
+                    </Stack>
                 </Box>
                 {/* Right */}
             </Stack>
