@@ -39,7 +39,7 @@ const Group = () => {
                         <Divider />
                         <Stack sx={{ flexGrow: 1, overflowY: "auto", height: "100%" }}>
                             <SimpleBarStyle timeout={500} clickOnTrack={false}>
-                                <Stack>
+                                <Stack spacing={2.5}>
                                     {/*  */}
                                     <Typography variant='subtitle2' sx={{color: "#676667"}}>Pinned</Typography>
                                     {/* chat list */}
@@ -47,10 +47,13 @@ const Group = () => {
                                         return <ChatElement {...el}></ChatElement>
                                     })}
                                 </Stack>
-                                <Stack>
+                                <Stack spacing={2.5}>
                                     {/*  */}
                                     <Typography variant='subtitle2' sx={{color: "#676667"}}>All Groups</Typography>
                                     {/* chat list */}
+                                    {ChatList.filter((el) => !el.pinned).map((el) => {
+                                        return <ChatElement {...el}></ChatElement>
+                                    })}
                                 </Stack>
                             </SimpleBarStyle>
                         </Stack>
