@@ -1,7 +1,7 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, IconButton, Link, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
-import { MagnifyingGlass } from 'phosphor-react';
+import { MagnifyingGlass, Plus } from 'phosphor-react';
 
 const Group = () => {
     return (
@@ -19,12 +19,18 @@ const Group = () => {
                             <Typography variant='h5'>Groups</Typography>
                         </Stack>
                         <Stack sx={{ width: "100%" }}>
-                        <Search>
-                        <SearchIconWrapper>
-                            <MagnifyingGlass color='#709CE6'></MagnifyingGlass>
-                        </SearchIconWrapper>
-                        <StyledInputBase placeholder="Search..." inputProps={{ "aria-label": "search" }}></StyledInputBase>
-                    </Search>
+                            <Search>
+                                <SearchIconWrapper>
+                                    <MagnifyingGlass color='#709CE6'></MagnifyingGlass>
+                                </SearchIconWrapper>
+                                <StyledInputBase placeholder="Search..." inputProps={{ "aria-label": "search" }}></StyledInputBase>
+                            </Search>
+                        </Stack>
+                        <Stack>
+                            <Typography variant='subtitle2' component={Link}>Create New Group</Typography>
+                        <IconButton>
+                            <Plus style={{color: theme.palette.primary.main}}/>
+                        </IconButton>
                         </Stack>
                     </Stack>
                 </Box>
