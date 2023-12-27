@@ -1,10 +1,13 @@
+import { Stack } from '@mui/material';
 import React from 'react';
 
 const Group = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Stack>
+                
+            </Stack>
+        </>
     );
 };
 
