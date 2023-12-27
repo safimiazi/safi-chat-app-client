@@ -1,4 +1,4 @@
-import { Box, IconButton, Link, Stack, Typography, useTheme } from '@mui/material';
+import { Box, Divider, IconButton, Link, Stack, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
 import { MagnifyingGlass, Plus } from 'phosphor-react';
@@ -27,12 +27,13 @@ const Group = () => {
                                 <StyledInputBase placeholder="Search..." inputProps={{ "aria-label": "search" }}></StyledInputBase>
                             </Search>
                         </Stack>
-                        <Stack>
+                        <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
                             <Typography variant='subtitle2' component={Link}>Create New Group</Typography>
                         <IconButton>
                             <Plus style={{color: theme.palette.primary.main}}/>
                         </IconButton>
                         </Stack>
+                        <Divider/>
                     </Stack>
                 </Box>
                 {/* Right */}
