@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Dialog, DialogContent, DialogTitle, Slide, Stack, Typography } from '@mui/material';
+import { Dialog, DialogContent, DialogTitle, IconButton, Slide, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
@@ -41,7 +41,10 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
 <Stack>
     <Stack>
-        <Typography></Typography>
+        <Typography>Create New Group</Typography>
+        <IconButton>
+            
+        </IconButton>
     </Stack>
 </Stack>
         </FormProvider>
