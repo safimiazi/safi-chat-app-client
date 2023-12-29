@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogTitle, Slide } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
+import FormProvider from '../../components/hook-form/FormProvider';
 
 //Todo => create a reuseable component
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -28,8 +29,19 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     const { reset, watch setError, handleSubmit, formState: { errors, isValid, isSubmitting, isSubmittingSuccessful } } = methods;
 
     const onSubmit = async (data) => {
-        
+        try {
+            //API Call
+            console.log("data", DataTransfer);
+        } catch (error) {
+            console.log(error);
+        }
     }
+
+    return(
+        <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+
+        </FormProvider>
+    )
   }
 const CreateGroup = ({open, handleClose}) => {
     return (
