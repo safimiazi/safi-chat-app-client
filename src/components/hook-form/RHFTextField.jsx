@@ -4,6 +4,7 @@ import { useFormContext, Controller } from "react-hook-form";
 import { TextField } from "@mui/material";
 RHFTextField.propTypes = {
     name: PropTypes.string,
+    label: PropTypes.string,
     helperText: PropTypes.node,
 }
 export default function RHFTextField({ name, helperText, ...other }) {
