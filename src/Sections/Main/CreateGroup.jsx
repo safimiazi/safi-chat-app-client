@@ -1,7 +1,7 @@
 import { Dialog } from '@mui/material';
 import React from 'react';
 
-const CreateGroup = () => {
+const CreateGroup = ({open, handleClose}) => {
     return (
         <Dialog fullWidth maxWidth="xs" open={open}>
             
