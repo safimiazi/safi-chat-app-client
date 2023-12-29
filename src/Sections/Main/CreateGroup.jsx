@@ -1,4 +1,4 @@
-import { Dialog, DialogTitle, Slide } from '@mui/material';
+import { Dialog, DialogContent, DialogTitle, Slide } from '@mui/material';
 import React from 'react';
 
 
@@ -12,6 +12,9 @@ const CreateGroup = ({open, handleClose}) => {
             {/* tltle */}
             <DialogTitle>Create New Group</DialogTitle>
             {/* content */}
+            <DialogContent>
+                
+            </DialogContent>
         </Dialog>
     );
 };
