@@ -5,6 +5,7 @@ import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { SimpleBarStyle } from '../../components/Scrollbar';
 import { ChatList } from '../../data';
 import ChatElement from '../../components/ChatElements';
+import CreateGroup from '../../Sections/Main/CreateGroup';
 
 const Group = () => {
     const theme = useTheme()
@@ -60,6 +61,7 @@ const Group = () => {
                 </Box>
                 {/* Right */}
                 {/* // TODO => Reuse Conversation Components */}
+        {openDialog && <CreateGroup/>}
             </Stack>
         </>
     );
