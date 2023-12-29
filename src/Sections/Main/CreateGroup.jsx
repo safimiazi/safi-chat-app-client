@@ -4,20 +4,22 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import FormProvider from '../../components/hook-form/FormProvider';
+import { X } from 'phosphor-react';
+import { RHFTextField } from '../../components/hook-form';
 
 //Todo => create a reuseable component
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
-  });
+});
 
-  const CreateGroupForm = ({}) => {
+const CreateGroupForm = ({ }) => {
     const NewGroupSchema = Yup.object().shape({
         title: Yup.string().required("Title is required"),
         members: Yup.array().min(2, "Must have al least 2 members")
     });
 
     const defaultValues = {
-        title:"",
+        title: "",
         members: [],
     }
 
@@ -37,22 +39,17 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         }
     }
 
-    return(
+    return (
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-<Stack>
-    <Stack>
-        <Typography>Create New Group</Typography>
-        <IconButton>
-            
-        </IconButton>
-    </Stack>
-</Stack>
+            <Stack spacing={3}>
+                <RHFTextField name="title" label="Title" />
+            </Stack>
         </FormProvider>
     )
-  }
-const CreateGroup = ({open, handleClose}) => {
+}
+const CreateGroup = ({ open, handleClose }) => {
     return (
-        <Dialog fullWidth maxWidth="xs" open={open} TransitionComponent={Transition} keepMounted sx={{p:4}}>
+        <Dialog fullWidth maxWidth="xs" open={open} TransitionComponent={Transition} keepMounted sx={{ p: 4 }}>
             {/* tltle */}
             <DialogTitle>Create New Group</DialogTitle>
             {/* content */}
