@@ -28,7 +28,7 @@ const CreateGroupForm = ({ }) => {
         defaultValues
     });
 
-    const { reset, watch setError, handleSubmit, formState: { errors, isValid, isSubmitting, isSubmittingSuccessful } } = methods;
+    const { reset, watch, setError, handleSubmit, formState: { errors, isValid, isSubmitting, isSubmittingSuccessful } } = methods;
 
     const onSubmit = async (data) => {
         try {
@@ -55,6 +55,7 @@ const CreateGroup = ({ open, handleClose }) => {
             {/* content */}
             <DialogContent>
                 {/* form */}
+                <CreateGroupForm/>
             </DialogContent>
         </Dialog>
     );
