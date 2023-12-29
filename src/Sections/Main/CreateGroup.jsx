@@ -1,5 +1,7 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Dialog, DialogContent, DialogTitle, Slide } from '@mui/material';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 
 //Todo => create a reuseable component
@@ -16,6 +18,17 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     const defaultValues = {
         title:"",
         members: [],
+    }
+
+    const methods = useForm({
+        resolver: yupResolver(NewGroupSchema),
+        defaultValues
+    });
+
+    const { reset, watch setError, handleSubmit, formState: { errors, isValid, isSubmitting, isSubmittingSuccessful } } = methods;
+
+    const onSubmit = async (data) => {
+        
     }
   }
 const CreateGroup = ({open, handleClose}) => {
