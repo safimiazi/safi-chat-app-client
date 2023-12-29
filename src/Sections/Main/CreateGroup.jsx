@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dialog, DialogContent, DialogTitle, Slide, Stack } from '@mui/material';
+import { Button, Dialog, DialogContent, DialogTitle, Slide, Stack } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -53,6 +53,11 @@ const CreateGroupForm = () => {
           freeSolo
           options={MEMBERS.map((option) => option)}
           ChipProps={{ size: 'medium' }}/>
+          <Stack spacing={2} direction={"row"} alignItems={"center"} justifyContent={"end"}>
+<Button type='submit' variant='contained'>
+    Create
+</Button>
+          </Stack>
       </Stack>
     </FormProvider>
   );
