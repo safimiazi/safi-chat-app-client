@@ -3,7 +3,7 @@ import React from 'react';
 
 const CreateGroup = () => {
     return (
-        <Dialog fullWidth maxWidth="xs">
+        <Dialog fullWidth maxWidth="xs" open={open}>
             
         </Dialog>
     );
