@@ -6,7 +6,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const CreateGroup = ({open, handleClose}) => {
     return (
         <Dialog fullWidth maxWidth="xs" open={open} TransitionComponent={Transition}>
-            
+            {/* tltle */}
         </Dialog>
     );
 };
