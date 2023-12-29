@@ -12,69 +12,72 @@ const MEMBERS = ['Name 1', 'Name 2', 'Name 3'];
 
 // Todo => create a reusable component
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
+    return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const CreateGroupForm = () => {
-  const NewGroupSchema = Yup.object().shape({
-    title: Yup.string().required('Title is required'),
-    members: Yup.array().min(2, 'Must have at least 2 members'),
-  });
+const CreateGroupForm = ({ handleClose }) => {
+    const NewGroupSchema = Yup.object().shape({
+        title: Yup.string().required('Title is required'),
+        members: Yup.array().min(2, 'Must have at least 2 members'),
+    });
 
-  const defaultValues = {
-    title: '',
-    members: [],
-  };
+    const defaultValues = {
+        title: '',
+        members: [],
+    };
 
-  const methods = useForm({
-    resolver: yupResolver(NewGroupSchema),
-    defaultValues,
-  });
+    const methods = useForm({
+        resolver: yupResolver(NewGroupSchema),
+        defaultValues,
+    });
 
-  const { handleSubmit, formState } = methods;
-  const { errors, isValid, isSubmitting, isSubmittingSuccessful } = formState;
+    const { handleSubmit, formState } = methods;
+    const { errors, isValid, isSubmitting, isSubmittingSuccessful } = formState;
 
-  const onSubmit = async (data) => {
-    try {
-      // API Call
-      console.log('data', data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    const onSubmit = async (data) => {
+        try {
+            // API Call
+            console.log('data', data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-  return (
-    <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-      <Stack spacing={3}>
-        <RHFTextField name="title" label="Title" />
-        <RHFAutoComplete  name="members"
-          label="Members"
-          multiple
-          freeSolo
-          options={MEMBERS.map((option) => option)}
-          ChipProps={{ size: 'medium' }}/>
-          <Stack spacing={2} direction={"row"} alignItems={"center"} justifyContent={"end"}>
-<Button type='submit' variant='contained'>
-    Create
-</Button>
-          </Stack>
-      </Stack>
-    </FormProvider>
-  );
+    return (
+        <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+            <Stack spacing={3}>
+                <RHFTextField sx={{mt:1}} name="title" label="Title" />
+                <RHFAutoComplete name="members"
+                    label="Members"
+                    multiple
+                    freeSolo
+                    options={MEMBERS.map((option) => option)}
+                    ChipProps={{ size: 'medium' }} />
+                <Stack spacing={2} direction={"row"} alignItems={"center"} justifyContent={"end"}>
+                    <Button onClick={handleClose}>
+                        Cancel
+                    </Button>
+                    <Button type='submit' variant='contained'>
+                        Create
+                    </Button>
+                </Stack>
+            </Stack>
+        </FormProvider>
+    );
 };
 
 const CreateGroup = ({ open, handleClose }) => {
-  return (
-    <Dialog fullWidth maxWidth="xs" open={open} TransitionComponent={Transition} keepMounted sx={{ p: 4 }}>
-      {/* title */}
-      <DialogTitle>Create New Group</DialogTitle>
-      {/* content */}
-      <DialogContent>
-        {/* form */}
-        <CreateGroupForm />
-      </DialogContent>
-    </Dialog>
-  );
+    return (
+        <Dialog fullWidth maxWidth="xs" open={open} TransitionComponent={Transition} keepMounted sx={{ p: 4 }}>
+            {/* title */}
+            <DialogTitle sx={{mb:3}}>Create New Group</DialogTitle>
+            {/* content */}
+            <DialogContent>
+                {/* form */}
+                <CreateGroupForm handleClose={handleClose} />
+            </DialogContent>
+        </Dialog>
+    );
 };
 
 export default CreateGroup;
