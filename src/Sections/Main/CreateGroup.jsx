@@ -1,4 +1,4 @@
-import { Dialog, Slide } from '@mui/material';
+import { Dialog, DialogTitle, Slide } from '@mui/material';
 import React from 'react';
 
 
@@ -10,6 +10,7 @@ const CreateGroup = ({open, handleClose}) => {
     return (
         <Dialog fullWidth maxWidth="xs" open={open} TransitionComponent={Transition} keepMounted sx={{p:4}}>
             {/* tltle */}
+            <DialogTitle>Create New Group</DialogTitle>
             {/* content */}
         </Dialog>
     );
