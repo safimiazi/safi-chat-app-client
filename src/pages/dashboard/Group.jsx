@@ -39,7 +39,9 @@ const Group = () => {
                         </Stack>
                         <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
                             <Typography variant='subtitle2' component={Link}>Create New Group</Typography>
-                            <IconButton>
+                            <IconButton onClick={()=> {
+                                setOpenDialog(true)
+                            }}>
                                 <Plus style={{ color: theme.palette.primary.main }} />
                             </IconButton>
                         </Stack>
