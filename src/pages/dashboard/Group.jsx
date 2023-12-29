@@ -1,5 +1,5 @@
 import { Box, Divider, IconButton, Link, Stack, Typography, useTheme } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
 import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { SimpleBarStyle } from '../../components/Scrollbar';
@@ -9,6 +9,12 @@ import CreateGroup from '../../Sections/Main/CreateGroup';
 
 const Group = () => {
     const theme = useTheme()
+    const [ openDialog, setOpenDialog] = useState(false)
+
+    const handleCloseDialog = () => {
+        setOpenDialog(false)
+    }
+  
     return (
         <>
             <Stack direction={"row"} sx={{ width: "100%" }}>
@@ -61,7 +67,7 @@ const Group = () => {
                 </Box>
                 {/* Right */}
                 {/* // TODO => Reuse Conversation Components */}
-        {openDialog && <CreateGroup/>}
+        {openDialog && <CreateGroup open={openDialog} handleClose={handleCloseDialog}/>}
             </Stack>
         </>
     );
