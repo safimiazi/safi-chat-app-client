@@ -9,8 +9,14 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
   const CreateGroupForm = ({}) => {
     const NewGroupSchema = Yup.object().shape({
-        
-    })
+        title: Yup.string().required("Title is required"),
+        members: Yup.array().min(2, "Must have al least 2 members")
+    });
+
+    const defaultValues = {
+        title:"",
+        members: [],
+    }
   }
 const CreateGroup = ({open, handleClose}) => {
     return (
