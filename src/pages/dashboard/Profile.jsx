@@ -14,7 +14,7 @@ const Profile = () => {
                             <IconButton>
                                 <CaretLeft />
                             </IconButton>
-                            <Typography></Typography>
+                            <Typography variant='h4'>Profile</Typography>
                         </Stack>
                     </Stack>
                 </Box>
