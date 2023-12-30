@@ -1,8 +1,8 @@
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import React from 'react';
 
 const CallLogElement = () => {
-    
+    const theme = useTheme()
     return (
         <>
             <Box
