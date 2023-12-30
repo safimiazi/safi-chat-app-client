@@ -23,4 +23,4 @@ const CallElement = () => {
 
 }
 
-export default CallLogElement;
+export {CallLogElement, CallElement};
