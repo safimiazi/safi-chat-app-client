@@ -24,11 +24,12 @@ const ProfileForm = () => {
         defaultValues,
     });
 
-    const { reset, setError, handleSubmit, formState: { errors, isSubmitting, isSubmittingSuccessful } } = methods;
+    const { reset,watch, control, setError, handleSubmit, formState: { errors, isSubmitting, isSubmittingSuccessful } } = methods;
 
     const onSubmit = async (data) => {
         try {
             //submit data to backend
+            console.log("data", data);
         }
         catch (error) {
             console.log(error);
