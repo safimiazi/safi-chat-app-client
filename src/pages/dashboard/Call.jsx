@@ -4,6 +4,7 @@ import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Sea
 import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { useTheme } from '@emotion/react';
 import { SimpleBarStyle } from '../../components/Scrollbar';
+import { CallLogElement } from '../../components/CallElements';
 
 const Call = () => {
     const theme = useTheme()
@@ -45,7 +46,7 @@ const Call = () => {
                                     {/*  */}
                                     <Typography variant='subtitle2' sx={{ color: "#676667" }}>Pinned</Typography>
                                     {/* Call Logs */}
-                                   
+                                   <CallLogElement/>
                                 </Stack>
 
                             </SimpleBarStyle>
