@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import FormProvider from '../../components/hook-form/FormProvider';
 import { Link as RouterLink } from "react-router-dom"
 import * as Yup from 'yup';
@@ -26,6 +26,11 @@ const ProfileForm = () => {
 
     const { reset,watch, control, setError, handleSubmit, formState: { errors, isSubmitting, isSubmittingSuccessful } } = methods;
 
+    const values = watch()
+
+    const handleDrop = useCallback(()=> {
+
+    }, []);
     const onSubmit = async (data) => {
         try {
             //submit data to backend
