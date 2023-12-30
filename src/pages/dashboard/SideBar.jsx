@@ -76,6 +76,20 @@ const getPath = (index) => {
   }
 }
 
+const getMenuPath = (index) => {
+switch (index) {
+  case 0:
+    return "/profile"
+  case 1:
+    return "/settings"
+  case 2:
+    //TODO => update token & set isAuth = false
+    return "/auth/login"
+  default:
+    break;
+}
+}
+
 
 const SideBar = () => {
   const [selected, setSelected] = useState(0);
@@ -173,8 +187,12 @@ const SideBar = () => {
             }}
           >
             <Stack spacing={1} px={1}>
-              {Profile_Menu.map((el) => <MenuItem onClick={handleClick}>
-                <Stack sx={{width: 100}} direction="row" alignItems={"center"} justifyContent="space-between">
+              {Profile_Menu.map((el, inx) => <MenuItem onClick={()=> {
+                handleClick()
+               
+
+              }}>
+                <Stack onClick={()=>  navigate(getMenuPath(inx))} sx={{width: 100}} direction="row" alignItems={"center"} justifyContent="space-between">
                 <span>{el.title}</span>
                 {el.icon}
               </Stack></MenuItem>)}
