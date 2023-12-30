@@ -61,6 +61,7 @@ const ProfileForm = () => {
                 {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
 
                 <RHFTextField name="name" label="Name" helperText={"This name is visible to your contacts"}/>
+            <RHFTextField multiline rows={4} maxRows={5} name={"about"} label={"About"}/>
             </Stack>
         </FormProvider>
     );
