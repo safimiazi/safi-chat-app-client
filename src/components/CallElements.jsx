@@ -1,11 +1,26 @@
+import { Box } from '@mui/material';
 import React from 'react';
 
-const CallElements = () => {
+const CallLogElement = () => {
+    
     return (
-        <div>
-            
-        </div>
+        <>
+            <Box
+            sx={{
+                width: "100%",
+
+                borderRadius: 1,
+                backgroundColor:theme.palette.mode === "light"? "#fff" :theme.palette.background.default,
+
+            }}
+            p={2}
+        ></Box> 
+        </>
     );
 };
 
-export default CallElements;
+const CallElement = () => {
+
+}
+
+export default CallLogElement;
