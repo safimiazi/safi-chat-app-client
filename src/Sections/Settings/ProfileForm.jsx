@@ -60,7 +60,7 @@ const ProfileForm = () => {
             <Stack spacing={3}>
                 {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
 
-                <RHFTextField name="email" label="Email address" />
+                <RHFTextField name="name" label="Name" helperText={"This name is visible to your contacts"}/>
             </Stack>
         </FormProvider>
     );
