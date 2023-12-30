@@ -7,6 +7,7 @@ import { Gear } from "phosphor-react";
 import { faker } from "@faker-js/faker";
 import styled from "@emotion/styled";
 import useSettings from "../../hooks/useSettings"
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -53,13 +54,38 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
     boxSizing: 'border-box',
   },
 }));
+
+
+const getPath = (index) => {
+  switch (index) {
+    case 0:
+      return "/app"
+      
+    case 1:
+      
+    return "/group"
+    case 2:
+      
+    return "/call"
+    case 3:
+      
+    return "/settings"
+  
+    default:
+      break;
+  }
+}
+
+
 const SideBar = () => {
   const [selected, setSelected] = useState(0);
+  const navigate = useNavigate()
   const { onToggleMode } = useSettings()
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    
   };
   const handleClose = () => {
     setAnchorEl(null);
@@ -92,6 +118,7 @@ const SideBar = () => {
                   <IconButton
                     onClick={() => {
                       setSelected(singleIcon.index)
+                      navigate(getPath(singleIcon.index))
                     }}
                     sx={{ width: "max-content", color: theme.palette.mode === "light" ? "#000" : theme.palette.text.primary }} key={singleIcon.index}>
                     {singleIcon.icon}
@@ -110,6 +137,7 @@ const SideBar = () => {
                 :
                 <IconButton sx={{ color: theme.palette.mode === "light" ? "#000" : theme.palette.text.primary }} onClick={() => {
                   setSelected(3)
+                  navigate(getPath(3))
                 }}>
                   <Gear></Gear>
                 </IconButton>
