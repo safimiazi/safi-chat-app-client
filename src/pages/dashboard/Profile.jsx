@@ -1,5 +1,4 @@
 import { Box, Stack, useTheme } from '@mui/material';
-import { Theme } from 'emoji-picker-react';
 import React from 'react';
 
 const Profile = () => {
@@ -7,7 +6,7 @@ const Profile = () => {
     return (
         <>
             <Stack direction={"row"} sx={{width: "100%"}}>
-<Box sx={{height: "100vh", backgroundColor: theme.palette.mode === "light"}}>
+<Box sx={{height: "100vh", backgroundColor: theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background}}>
 
 </Box>
             </Stack>
