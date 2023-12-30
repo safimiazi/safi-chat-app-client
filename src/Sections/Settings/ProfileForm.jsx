@@ -12,6 +12,7 @@ const ProfileForm = () => {
     const ProfileSchema = Yup.object().shape({
         name: Yup.string().required("Name is required"),
         about: Yup.string().required("About is required"),
+        avatarUrl: Yup.string().required("Avatar is required").nullable(true)
     });
 
     const defaultValues = {
