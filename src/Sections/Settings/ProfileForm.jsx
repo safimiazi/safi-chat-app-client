@@ -9,7 +9,7 @@ import { RHFTextField } from '../../components/hook-form';
 import { Eye, EyeSlash } from 'phosphor-react';
 const ProfileForm = () => {
 
-    const LoginSchema = Yup.object().shape({
+    const ProfileSchema = Yup.object().shape({
         name: Yup.string().required("Name is required"),
         about: Yup.string().required("About is required"),
     });
@@ -20,7 +20,7 @@ const ProfileForm = () => {
     }
 
     const methods = useForm({
-        resolver: yupResolver(LoginSchema),
+        resolver: yupResolver(ProfileSchema),
         defaultValues,
     });
 
