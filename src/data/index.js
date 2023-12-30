@@ -46,6 +46,81 @@ const Nav_Setting = [
   },
 ];
 
+
+const CallLogs = [
+  {
+    id: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+  },
+  {
+    id: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+  },
+  {
+    id: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+  },
+  {
+    id: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+  },
+  {
+    id: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+  },
+  {
+    id: 5,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+  },
+  {
+    id: 6,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: false,
+  },
+  {
+    id: 7,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+  },
+  {
+    id:8,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: false,
+  },
+  {
+    id: 9,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: true,
+  },
+  
+]
+
 const ChatList = [
   {
     id: 0,
@@ -324,6 +399,7 @@ export {
   Chat_History,
   Message_options,
   SHARED_LINKS,
-  SHARED_DOCS
+  SHARED_DOCS,
+  CallLogs
 
 };

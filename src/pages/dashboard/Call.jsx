@@ -5,6 +5,7 @@ import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { useTheme } from '@emotion/react';
 import { SimpleBarStyle } from '../../components/Scrollbar';
 import { CallLogElement } from '../../components/CallElements';
+import { CallLogs } from '../../data';
 
 const Call = () => {
     const theme = useTheme()
@@ -44,9 +45,8 @@ const Call = () => {
                             <SimpleBarStyle timeout={500} clickOnTrack={false}>
                                 <Stack spacing={2.5}>
                                     {/*  */}
-                                    <Typography variant='subtitle2' sx={{ color: "#676667" }}>Pinned</Typography>
                                     {/* Call Logs */}
-                                   <CallLogElement/>
+                                 {CallLogs.map((el)=>   <CallLogElement {...el} />)}
                                 </Stack>
 
                             </SimpleBarStyle>
