@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import { Avatar, Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import { Phone } from 'phosphor-react';
 import React from 'react';
@@ -18,7 +19,7 @@ const CallLogElement = () => {
             >
                 <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                     <Stack>
-                        <Avatar/>
+                        <Avatar src={faker.image.avatar()} alt={faker.name.fullName()}/>
                     </Stack>
                     <Stack>
                         <IconButton>
