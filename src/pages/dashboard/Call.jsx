@@ -20,7 +20,7 @@ const Call = () => {
                 }}>
                     <Stack p={3} spacing={2} sx={{ maxHeight: "100vh" }}>
                         <Stack>
-                            <Typography variant='h5'>Groups</Typography>
+                            <Typography variant='h5'>Call Logs</Typography>
                         </Stack>
                         <Stack sx={{ width: "100%" }}>
                             <Search>
@@ -44,7 +44,7 @@ const Call = () => {
                                 <Stack spacing={2.5}>
                                     {/*  */}
                                     <Typography variant='subtitle2' sx={{ color: "#676667" }}>Pinned</Typography>
-                                    {/* chat list */}
+                                    {/* Call Logs */}
                                    
                                 </Stack>
 
