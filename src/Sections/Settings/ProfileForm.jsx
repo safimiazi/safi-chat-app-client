@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom"
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert,Stack } from '@mui/material';
+import { Alert,Stack, accordionActionsClasses } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
 const ProfileForm = () => {
 
@@ -28,9 +28,11 @@ const ProfileForm = () => {
 
     const values = watch()
 
-    const handleDrop = useCallback(()=> {
-
+    const handleDrop = useCallback((acceptedFiles)=> {
+const file = accordionActionsClasses[0];
     }, []);
+
+
     const onSubmit = async (data) => {
         try {
             //submit data to backend
