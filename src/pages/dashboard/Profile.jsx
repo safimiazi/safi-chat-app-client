@@ -5,10 +5,10 @@ const Profile = () => {
     const theme = useTheme()
     return (
         <>
-            <Stack direction={"row"} sx={{width: "100%"}}>
-<Box sx={{height: "100vh", backgroundColor: theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background}}>
+            <Stack direction={"row"} sx={{ width: "100%" }}>
+                <Box sx={{ height: "100vh", backgroundColor: theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background, width: 320,  }}>
 
-</Box>
+                </Box>
             </Stack>
         </>
     );
