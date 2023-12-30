@@ -1,7 +1,7 @@
 import { Box, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
-import { MagnifyingGlass } from 'phosphor-react';
+import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { useTheme } from '@emotion/react';
 
 const Call = () => {
@@ -32,7 +32,7 @@ const Call = () => {
                         <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
                             <Typography variant='subtitle2' component={Link}>Create New Group</Typography>
                             <IconButton onClick={()=> {
-                                setOpenDialog(true)
+                                // setOpenDialog(true)
                             }}>
                                 <Plus style={{ color: theme.palette.primary.main }} />
                             </IconButton>
