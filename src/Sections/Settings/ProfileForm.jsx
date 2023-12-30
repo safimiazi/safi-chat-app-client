@@ -57,15 +57,19 @@ const ProfileForm = () => {
     }
     return (
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-            <Stack spacing={3}>
+           <Stack spacing={3}>
+           <Stack spacing={3}>
                 {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
 
                 <RHFTextField name="name" label="Name" helperText={"This name is visible to your contacts"} />
                 <RHFTextField multiline rows={3} maxRows={5} name={"about"} label={"About"} />
             </Stack>
-            <Stack direction={"row"} justifyContent={"end"}>
-                <Button color='primary' size='large' type='submit' variant='outline'>Save</Button>
+            <Stack direction="row" justifyContent="flex-end">
+                <Button color="primary" size="large" type="submit" variant="outlined">
+                    Save
+                </Button>
             </Stack>
+           </Stack>
         </FormProvider>
     );
 };
