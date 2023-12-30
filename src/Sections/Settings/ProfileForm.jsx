@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom"
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert, Stack, accordionActionsClasses } from '@mui/material';
+import { Alert, Button, Stack, accordionActionsClasses } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
 const ProfileForm = () => {
 
@@ -35,8 +35,8 @@ const ProfileForm = () => {
             preview: URL.createObjectURL(file)
         })
 
-        if(file){
-            setValue("avatarUrl", newFile, {shouldValidate: true})
+        if (file) {
+            setValue("avatarUrl", newFile, { shouldValidate: true })
         }
     }, [setValue]);
 
@@ -60,8 +60,11 @@ const ProfileForm = () => {
             <Stack spacing={3}>
                 {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
 
-                <RHFTextField name="name" label="Name" helperText={"This name is visible to your contacts"}/>
-            <RHFTextField multiline rows={4} maxRows={5} name={"about"} label={"About"}/>
+                <RHFTextField name="name" label="Name" helperText={"This name is visible to your contacts"} />
+                <RHFTextField multiline rows={3} maxRows={5} name={"about"} label={"About"} />
+            </Stack>
+            <Stack direction={"row"} justifyContent={"end"}>
+                <Button color='primary' size='large' type='submit' variant='outline'>Save</Button>
             </Stack>
         </FormProvider>
     );

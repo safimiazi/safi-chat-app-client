@@ -1,6 +1,7 @@
 import { Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
 import { CaretLeft } from 'phosphor-react';
 import React from 'react';
+import ProfileForm from '../../Sections/Settings/ProfileForm';
 
 const Profile = () => {
     const theme = useTheme()
@@ -18,6 +19,7 @@ const Profile = () => {
                         </Stack>
 
                         {/* profile form */}
+                        <ProfileForm/>
                     </Stack>
                 </Box>
             </Stack>
