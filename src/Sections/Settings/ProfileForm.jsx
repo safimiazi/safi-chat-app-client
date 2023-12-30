@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom"
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert,Stack, accordionActionsClasses } from '@mui/material';
+import { Alert, Stack, accordionActionsClasses } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
 const ProfileForm = () => {
 
@@ -24,13 +24,21 @@ const ProfileForm = () => {
         defaultValues,
     });
 
-    const { reset,watch, control, setError, handleSubmit, formState: { errors, isSubmitting, isSubmittingSuccessful } } = methods;
+    const { reset, watch, control, setError, setValue, handleSubmit, formState: { errors, isSubmitting, isSubmittingSuccessful } } = methods;
 
     const values = watch()
 
-    const handleDrop = useCallback((acceptedFiles)=> {
-const file = accordionActionsClasses[0];
-    }, []);
+    const handleDrop = useCallback((acceptedFiles) => {
+        const file = accordionActionsClasses[0];
+
+        const newFile = Object.assign(file, {
+            preview: URL.createObjectURL(file)
+        })
+
+        if(file){
+            setValue("avatarUrl", newFile, {shouldValidate: true})
+        }
+    }, [setValue]);
 
 
     const onSubmit = async (data) => {
