@@ -1,15 +1,20 @@
 import { Box, Divider, IconButton, Link, Stack, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
 import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { useTheme } from '@emotion/react';
 import { SimpleBarStyle } from '../../components/Scrollbar';
 import { CallLogElement } from '../../components/CallElements';
 import { CallLogs } from '../../data';
+import StartCall from '../../Sections/Main/StartCall';
 
 const Call = () => {
     const theme = useTheme()
+    const [ openDialog, setOpenDialog] = useState(false)
 
+    const handleCloseDialog = () => {
+        setOpenDialog(false)
+    }
     return (
         <>
            <Stack direction={"row"} sx={{ width: "100%" }}>
@@ -35,7 +40,7 @@ const Call = () => {
                         <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
                             <Typography variant='subtitle2' component={Link}>Start New Conversation</Typography>
                             <IconButton onClick={()=> {
-                                // setOpenDialog(true)
+                                setOpenDialog(true)
                             }}>
                                 <Plus style={{ color: theme.palette.primary.main }} />
                             </IconButton>
@@ -55,8 +60,9 @@ const Call = () => {
                 </Box>
                 {/* Right */}
                 {/* // TODO => Reuse Conversation Components */}
-        {/* {openDialog && <CreateGroup open={openDialog} handleClose={handleCloseDialog}/>} */}
             </Stack>  
+            {openDialog && <StartCall open={openDialog} handleClose={handleCloseDialog}/>}
+
         </>
     );
 };
