@@ -10,8 +10,8 @@ import { Eye, EyeSlash } from 'phosphor-react';
 const ProfileForm = () => {
 
     const LoginSchema = Yup.object().shape({
-        email: Yup.string().required("Email is required").email("Email must be a valid email address"),
-        password: Yup.string().required("password is required"),
+        name: Yup.string().required("Name is required"),
+        about: Yup.string().required("About is required"),
     });
 
     const defaultValues = {
