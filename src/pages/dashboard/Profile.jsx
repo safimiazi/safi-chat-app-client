@@ -16,6 +16,8 @@ const Profile = () => {
                             </IconButton>
                             <Typography variant='h4'>Profile</Typography>
                         </Stack>
+
+                        {/* profile form */}
                     </Stack>
                 </Box>
             </Stack>
