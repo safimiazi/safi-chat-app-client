@@ -73,4 +73,6 @@ const GroupPages = Loadable(
 const CallPages = Loadable(
   lazy(() => import("../pages/dashboard/Call")),
 );
+
+const ProfilePage = Loadable(lazy(()=> import("../pages/dashboard/Profile")))
 const Page404 = Loadable(lazy(() => import("../pages/Page404")));
