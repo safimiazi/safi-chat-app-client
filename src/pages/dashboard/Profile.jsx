@@ -1,4 +1,5 @@
 import { Box, IconButton, Stack, useTheme } from '@mui/material';
+import { CaretLeft } from 'phosphor-react';
 import React from 'react';
 
 const Profile = () => {
@@ -11,7 +12,7 @@ const Profile = () => {
                         {/* Header */}
 <Stack direction={"row"} alignItems={"center"} spacing={3}>
 <IconButton>
-    
+    <CaretLeft/>
 </IconButton>
 </Stack>
                     </Stack>
