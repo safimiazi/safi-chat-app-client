@@ -27,7 +27,7 @@ export default function Router() {
         { element: <RegisterPage />, path: "register" },
         { element: <ResetPasswordPage />, path: "reset-password" },
         { element: <NewPasswordPage />, path: "new-password" },
-        { element: <ProfilePage />, path: "profile" },
+       
       ]
     },
     {
@@ -39,6 +39,7 @@ export default function Router() {
         { path: "settings", element: <Settings /> },
         { path: "group", element: <GroupPages /> },
         { path: "call", element: <CallPages /> },
+        { element: <ProfilePage />, path: "profile" },
 
 
 
