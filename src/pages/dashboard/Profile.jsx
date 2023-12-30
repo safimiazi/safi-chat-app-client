@@ -9,7 +9,7 @@ const Profile = () => {
                 <Box sx={{ height: "100vh", backgroundColor: theme.palette.mode === "light" ? "#F8FAFF" : theme.palette.background, width: 320, boxShadow: "0px 0px 2px rgba(0,0,0, 0.25)", }}>
                     <Stack p={4} spacing={5}>
                         {/* Header */}
-<Stack direction={"row"}>
+<Stack direction={"row"} alignItems={"center"} spacing={3}>
 
 </Stack>
                     </Stack>
