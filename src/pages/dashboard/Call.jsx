@@ -1,8 +1,9 @@
-import { Box, IconButton, Stack, Typography } from '@mui/material';
+import { Box, Divider, IconButton, Link, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
 import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { useTheme } from '@emotion/react';
+import { SimpleBarStyle } from '../../components/Scrollbar';
 
 const Call = () => {
     const theme = useTheme()
@@ -30,7 +31,7 @@ const Call = () => {
                             </Search>
                         </Stack>
                         <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
-                            <Typography variant='subtitle2' component={Link}>Create New Group</Typography>
+                            <Typography variant='subtitle2' component={Link}>Start New Conversation</Typography>
                             <IconButton onClick={()=> {
                                 // setOpenDialog(true)
                             }}>
@@ -53,7 +54,7 @@ const Call = () => {
                 </Box>
                 {/* Right */}
                 {/* // TODO => Reuse Conversation Components */}
-        {openDialog && <CreateGroup open={openDialog} handleClose={handleCloseDialog}/>}
+        {/* {openDialog && <CreateGroup open={openDialog} handleClose={handleCloseDialog}/>} */}
             </Stack>  
         </>
     );
