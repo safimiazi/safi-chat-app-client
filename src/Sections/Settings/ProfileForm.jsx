@@ -4,9 +4,8 @@ import { Link as RouterLink } from "react-router-dom"
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Alert, Button, IconButton, InputAdornment, Link, Stack } from '@mui/material';
+import { Alert,Stack } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
-import { Eye, EyeSlash } from 'phosphor-react';
 const ProfileForm = () => {
 
     const ProfileSchema = Yup.object().shape({
@@ -16,8 +15,8 @@ const ProfileForm = () => {
     });
 
     const defaultValues = {
-        email: "demo@safichat.com",
-        password: "demo1234"
+        name: "",
+        about: ""
     }
 
     const methods = useForm({
