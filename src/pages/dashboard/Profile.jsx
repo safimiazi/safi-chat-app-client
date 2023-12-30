@@ -1,4 +1,4 @@
-import { Box, Stack, useTheme } from '@mui/material';
+import { Box, IconButton, Stack, useTheme } from '@mui/material';
 import React from 'react';
 
 const Profile = () => {
@@ -10,7 +10,9 @@ const Profile = () => {
                     <Stack p={4} spacing={5}>
                         {/* Header */}
 <Stack direction={"row"} alignItems={"center"} spacing={3}>
-
+<IconButton>
+    
+</IconButton>
 </Stack>
                     </Stack>
                 </Box>
