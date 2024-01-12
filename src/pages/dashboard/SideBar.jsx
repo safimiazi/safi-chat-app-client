@@ -197,6 +197,7 @@ const SideBar = () => {
               }}>
                 <Stack onClick={()=> {
                   if(inx === 2){
+                    //if inx is 2 then dispatch logoutUser
                     dispatch(LogoutUser())
                   }else{
                     navigate(getMenuPath(inx));
