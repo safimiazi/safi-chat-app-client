@@ -43,3 +43,9 @@ return async (dispatch, getState) => {
 })
 }
 }
+
+export function LogoutUser () {
+    return async (dispatch, getState)=> {
+        dispatch(slice.actions.signOut())
+    }
+}
