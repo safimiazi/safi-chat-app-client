@@ -3,7 +3,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import Stack from '@mui/material/Stack';
 import SideBar from "../../pages/dashboard/SideBar";
 
-const isAuthenticated = true;
+const isAuthenticated = false;
 
 const DashboardLayout = () => {
   const theme = useTheme()
