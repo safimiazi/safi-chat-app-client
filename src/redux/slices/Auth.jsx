@@ -68,6 +68,12 @@ export function NewPassword (formValues) {
       await  axios.post("/auth/reset-password", {...formValues}, {headers: {"Content-Type": "application/json"}})
    .then(res => {
     console.log(res);
+    dispatch(
+        slice.actions.logIn({
+            isLoggedIn: true,
+            token:res.data.token
+        })
+    )
    })
    .catch(error => {
     console.log(error);
