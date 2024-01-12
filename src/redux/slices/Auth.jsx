@@ -61,3 +61,16 @@ export function ForgotPassword (formValues) {
    })
     }
 }
+
+
+export function NewPassword (formValues) {
+    return async (dispatch, getState) => {
+      await  axios.post("/auth/reset-password", {...formValues}, {headers: {"Content-Type": "application/json"}})
+   .then(res => {
+    console.log(res);
+   })
+   .catch(error => {
+    console.log(error);
+   })
+    }
+}
