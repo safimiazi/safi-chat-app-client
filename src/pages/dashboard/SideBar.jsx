@@ -8,6 +8,8 @@ import { faker } from "@faker-js/faker";
 import styled from "@emotion/styled";
 import useSettings from "../../hooks/useSettings"
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { LogoutUser } from '../../redux/slices/Auth';
 
 
 
@@ -92,6 +94,7 @@ switch (index) {
 
 
 const SideBar = () => {
+  const dispatch = useDispatch()
   const [selected, setSelected] = useState(0);
   const navigate = useNavigate()
   const { onToggleMode } = useSettings()
@@ -192,7 +195,14 @@ const SideBar = () => {
                
 
               }}>
-                <Stack onClick={()=>  navigate(getMenuPath(inx))} sx={{width: 100}} direction="row" alignItems={"center"} justifyContent="space-between">
+                <Stack onClick={()=> {
+                  if(inx === 2){
+                    dispatch(LogoutUser())
+                  }else{
+                    navigate(getMenuPath(inx));
+                  }
+                 
+                }} sx={{width: 100}} direction="row" alignItems={"center"} justifyContent="space-between">
                 <span>{el.title}</span>
                 {el.icon}
               </Stack></MenuItem>)}
