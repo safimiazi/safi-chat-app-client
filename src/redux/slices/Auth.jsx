@@ -49,3 +49,15 @@ export function LogoutUser () {
         dispatch(slice.actions.signOut())
     }
 }
+
+export function ForgotPassword (formValues) {
+    return async (dispatch, getState) => {
+      await  axios.post("/auth/forgot-password", {...formValues}, {headers: {"Content-Type": "application/json"}})
+   .then(res => {
+    console.log(res);
+   })
+   .catch(error => {
+    console.log(error);
+   })
+    }
+}
