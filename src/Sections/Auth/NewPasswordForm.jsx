@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FormProvider from '../../components/hook-form/FormProvider';
-import { Link as RouterLink } from "react-router-dom"
+import { Link as RouterLink, useSearchParams } from "react-router-dom"
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { NewPassword } from '../../redux/slices/Auth';
 
 const NewPasswordForm = () => {
-    
+    const [queryParameters] = useSearchParams()
     const dispatch = useDispatch()
     const [showPassword, setShowPassword] = useState(false);
 
@@ -35,7 +35,7 @@ const NewPasswordForm = () => {
     const onSubmit = async (data) => {
         try {
             // submit data to backend
-            dispatch(NewPassword(data))
+            dispatch(NewPassword({...data, token: queryParameters.get("token")}))
         }
         catch (error) {
             console.log(error);
