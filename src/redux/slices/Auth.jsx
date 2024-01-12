@@ -33,6 +33,10 @@ return async (dispatch, getState) => {
     await axios.post("/auth/login", {...formValues},{headers: {"Content-Type": "application/json"}})
 .then((res)=> {
     console.log(res);
+    dispatch(slice.actions.logIn({
+        isLoggedIn: true,
+        token: res.data.token
+    }))
 })
 .catch(error => {
     console.log(error);
