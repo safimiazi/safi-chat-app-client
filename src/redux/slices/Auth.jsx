@@ -60,7 +60,7 @@ export function ForgotPassword (formValues) {
     console.log(error);
    })
     }
-}
+};
 
 
 export function NewPassword (formValues) {
