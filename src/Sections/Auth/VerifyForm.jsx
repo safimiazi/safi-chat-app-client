@@ -2,6 +2,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as Yup from "yup"
+import FormProvider from '../../components/hook-form/FormProvider';
+import { Button, Stack } from '@mui/material';
 const VerifyForm = () => {
     //email => get it from store
 
@@ -29,9 +31,9 @@ const VerifyForm = () => {
         defaultValues,
     });
 
-    const {handleSubmit, formState}=methods;
+    const { handleSubmit, formState } = methods;
 
-    const onSubmit = async (data)=> {
+    const onSubmit = async (data) => {
         try {
             // Send API request
         } catch (error) {
@@ -39,9 +41,33 @@ const VerifyForm = () => {
         }
     }
     return (
-        <div>
-            
-        </div>
+        <>
+            <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+                <Stack spacing={3}>
+                    {/* custom otp input */}
+
+                    <Button
+                        fullWidth
+                        color="inherit"
+                        size='large'
+                        type='submit'
+                        variant='contained'
+                        sx={{
+                            bgcolor: "text.primary",
+                            color: (theme) => theme.palette.mode === "light" ? "common.white" : "grey.800",
+                            '&:hover': {
+                                bgcolor: "text.primary",
+                                color: (theme) => theme.palette.mode === "light" ? "common.white" : "grey.800",
+                            },
+                        }}
+                    >
+                        Login
+                    </Button>
+
+                </Stack>
+            </FormProvider>
+
+        </>
     );
 };
 
