@@ -27,7 +27,17 @@ const VerifyForm = () => {
         mode: "onChange",
         resolver: yupResolver(VerifyCodeSchema),
         defaultValues,
-    })
+    });
+
+    const {handleSubmit, formState}=methods;
+
+    const onSubmit = async (data)=> {
+        try {
+            // Send API request
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <div>
             
