@@ -1,4 +1,6 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import * as Yup from "yup"
 const VerifyForm = () => {
     //email => get it from store
@@ -10,6 +12,21 @@ const VerifyForm = () => {
         code4: Yup.string().required("Code is required"),
         code5: Yup.string().required("Code is required"),
         code6: Yup.string().required("Code is required"),
+    });
+
+    const defaultValues = {
+        code1: "",
+        code2: "",
+        code3: "",
+        code4: "",
+        code5: "",
+        code6: "",
+    };
+
+    const methods = useForm({
+        mode: "onChange",
+        resolver: yupResolver(VerifyCodeSchema),
+        defaultValues,
     })
     return (
         <div>
