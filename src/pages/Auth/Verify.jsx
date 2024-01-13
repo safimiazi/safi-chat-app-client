@@ -6,6 +6,9 @@ const Verify = () => {
         <>
            <Stack spacing={2} sx={{mb:5, position: "relative"}}>
             <Typography>Please Verify OTP</Typography>
+            <Stack>
+                <Typography>Sent to email {mohibulla@gmail.com}</Typography>
+            </Stack>
             </Stack> 
         </>
     );
