@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack, Typography, Container } from '@mui/material';
+import VerifyForm from '../../Sections/Auth/VerifyForm';
 
 const Verify = () => {
 
@@ -12,6 +13,7 @@ const Verify = () => {
                 </Stack>
             </Stack>
             {/* verify form */}
+            <VerifyForm/>
         </>
     );
 };

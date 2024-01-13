@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as Yup from "yup"
 import FormProvider from '../../components/hook-form/FormProvider';
 import { Button, Stack } from '@mui/material';
+import RHFCodes from '../../components/hook-form/RHFCodes';
 const VerifyForm = () => {
     //email => get it from store
 
@@ -45,7 +46,7 @@ const VerifyForm = () => {
             <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
                 <Stack spacing={3}>
                     {/* custom otp input */}
-
+                    <RHFCodes keyName={"code"} inputs={["code1", "code2", "code3", "code4", "code5", "code6"]}/>
                     <Button
                         fullWidth
                         color="inherit"
@@ -61,7 +62,7 @@ const VerifyForm = () => {
                             },
                         }}
                     >
-                        Login
+                        Verify
                     </Button>
 
                 </Stack>
