@@ -80,3 +80,20 @@ export function NewPassword (formValues) {
    })
     }
 }
+
+
+export function RegisterUser (formValues) {
+    return async (dispatch, getState) => {
+      await  axios.post("/auth/register", {...formValues}, {headers: {"Content-Type": "application/json"}})
+   .then(res => {
+    console.log(res);
+   
+   })
+   .catch(error => {
+    console.log(error);
+   })
+   .finally(()=> {
+    window.location.href = "/auth/verify"
+   })
+    }
+}
