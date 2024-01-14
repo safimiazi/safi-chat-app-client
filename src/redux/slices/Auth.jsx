@@ -54,7 +54,7 @@ export function LoginUser(formValues) {
                 dispatch(showSnackbar({severity: "error", message: error.message}))
 
             })
-    }
+    };
 };
 
 export function LogoutUser() {
