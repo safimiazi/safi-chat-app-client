@@ -55,7 +55,7 @@ export function LoginUser(formValues) {
 
             })
     }
-}
+};
 
 export function LogoutUser() {
     return async (dispatch, getState) => {
