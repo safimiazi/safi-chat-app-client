@@ -61,7 +61,7 @@ export function LogoutUser() {
     return async (dispatch, getState) => {
         dispatch(slice.actions.signOut())
     }
-}
+};
 
 export function ForgotPassword(formValues) {
     return async (dispatch, getState) => {
