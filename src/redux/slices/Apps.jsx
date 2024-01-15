@@ -79,7 +79,7 @@ export function showSnackbar({severity, message}) {
             dispatch(slice.actions.closeSnackbar());
         }, 4000);
     }
-}
+};
 
 
 export const closeSnackbar = () => async (dispatch, getState) => {
