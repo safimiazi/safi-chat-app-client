@@ -84,4 +84,4 @@ export function showSnackbar({severity, message}) {
 
 export const closeSnackbar = () => async (dispatch, getState) => {
     dispatch(slice.actions.closeSnackbar());
-}
+};
