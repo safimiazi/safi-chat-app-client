@@ -7,7 +7,7 @@ import ThemeSettings from './components/settings';
 import { Snackbar } from "@mui/material";
 import React from "react";
 import MuiAlert from '@mui/material/Alert';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { closeSnackbar } from "./redux/slices/Apps";
 
 const vertical = "bottom";
@@ -20,6 +20,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function App() {
   const dispatch = useDispatch()
   const { open, message, severity } = useSelector((state) => state.app);
+  console.log("hi", open);
   return (
     <>
       <ThemeProvider>
