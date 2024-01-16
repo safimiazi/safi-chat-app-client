@@ -31,15 +31,16 @@ const slice = createSlice({
             state.sidebar.type = action.payload.type;
         },
         openSnackbar(state, action) {
-            console.log("state", state);
+            console.log("state", action);
             state.snackbar.open = true;
-            state.snackbar.severity = action.payload.severity;
             state.snackbar.message = action.payload.message;
+            state.snackbar.severity = action.payload.severity;
         },
         closeSnackbar(state, action) {
             state.snackbar.open = false;
-            state.snackbar.severity = null;
             state.snackbar.message = null;
+            state.snackbar.severity = null;
+          
         },
         updateUsers(state, action) {
             state.users = action.payload.users;

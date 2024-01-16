@@ -1,17 +1,64 @@
 import { Dialog, DialogContent, Stack, Tab, Tabs } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { FetchFriendRequests, FetchFriends, FetchUsers } from '../../redux/slices/Apps';
 
 
 
 const UsersList = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(FetchUsers());
+    }, []);
+
+    const { users } = useSelector((state) => state.app)
     return (
         <>
-            {}
+            {users.map((el, idx) => {
+                // TODO => Render UserComponents
+                return <></>;
+            })}
+        </>
+    );
+};
+const FriendsList = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(FetchFriends());
+    }, []);
+
+    const { friends } = useSelector((state) => state.app)
+    return (
+        <>
+            {friends.map((el, idx) => {
+                // TODO => Render Friend Components
+                return <></>;
+            })}
+        </>
+    );
+};
+const FriendRequestList = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(FetchFriendRequests());
+    }, []);
+
+    const { friendRequests } = useSelector((state) => state.app)
+    return (
+        <>
+            {friendRequests.map((el, idx) => {
+                // TODO => Render Friend request Components
+                return <></>;
+            })}
         </>
     );
 };
 
-export default Friends;
+
+
 
 
 const Friends = ({ open, handleClose }) => {
@@ -33,22 +80,21 @@ const Friends = ({ open, handleClose }) => {
             <DialogContent>
                 <Stack sx={{ height: "100%" }}>
                     <Stack spacing={2.5}>
-{(()=> {
-switch (value) {
-    case 0: //display all users
-        
-        break;
-    case 1: //display all friends
-        
-        break;
-    case 2: // display all friend requests
-        
-        break;
+                        {(() => {
+                            switch (value) {
+                                case 0: //display all users
+                                    return <UsersList />
 
-    default:
-        break;
-}
-})()}
+                                case 1: //display all friends
+                                    return <FriendsList />
+
+                                case 2: // display all friend requests
+                                    return <FriendRequestList />
+
+                                default:
+                                    break;
+                            }
+                        })()}
                     </Stack>
                 </Stack>
             </DialogContent>
