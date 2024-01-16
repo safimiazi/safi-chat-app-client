@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { faker } from '@faker-js/faker';
 import { Avatar, Badge, Box, Button, Divider, IconButton, InputBase, Stack, Typography, alpha } from '@mui/material';
 import { ArchiveBox, CircleDashed, MagnifyingGlass, Users } from 'phosphor-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { ChatList } from '../../data';
 import { SimpleBarStyle } from '../../components/Scrollbar';
 import { useTheme } from '@emotion/react';
@@ -17,7 +17,15 @@ import ChatElement from '../../components/ChatElements';
 
 
 const Chats = () => {
+    const [openDialog, setOpenDialog] = useState(false)
     const theme = useTheme()
+
+    const handleCloseDialog = () => {
+        setOpenDialog(false);
+    }
+    const handleOpenDialog = () => {
+        setOpenDialog(true);
+    }
     return (
         <Box sx={{ position: "relative", width: "320px", backgroundColor:theme.palette.mode === "light" ?  "#F8FAFF" : theme.palette.background.paper, boxShadow: "0px 0px 2px rgba(0,0,0,0.25" }}>
             <Stack p={3} spacing={2} sx={{ height: "100vh" }}>
@@ -26,7 +34,9 @@ const Chats = () => {
                         Chats
                     </Typography>
                     <Stack direction={"row"} alignItems={"center"} spacing={1}>
-                    <IconButton>
+                    <IconButton onClick={()=> {
+                        handleOpenDialog();
+                    }}>
                         <Users/>
                     </IconButton>
                     <IconButton>
