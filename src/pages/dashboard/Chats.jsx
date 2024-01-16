@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { faker } from '@faker-js/faker';
 import { Avatar, Badge, Box, Button, Divider, IconButton, InputBase, Stack, Typography, alpha } from '@mui/material';
-import { ArchiveBox, CircleDashed, MagnifyingGlass } from 'phosphor-react';
+import { ArchiveBox, CircleDashed, MagnifyingGlass, Users } from 'phosphor-react';
 import React from 'react';
 import { ChatList } from '../../data';
 import { SimpleBarStyle } from '../../components/Scrollbar';
@@ -25,9 +25,14 @@ const Chats = () => {
                     <Typography variant='h5'>
                         Chats
                     </Typography>
+                    <Stack direction={"row"} alignItems={"center"} spacing={1}>
                     <IconButton>
-                        <CircleDashed></CircleDashed>
+                        <Users/>
                     </IconButton>
+                    <IconButton>
+                        <CircleDashed/>
+                    </IconButton>
+                    </Stack>
                 </Stack>
                 <Stack sx={{ width: "100%" }}>
                     <Search>
