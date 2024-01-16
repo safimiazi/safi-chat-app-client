@@ -43,15 +43,21 @@ export function LoginUser(formValues) {
         await axios.post("/auth/login", { ...formValues }, { headers: { "Content-Type": "application/json" } })
             .then((res) => {
                 console.log(res);
-                dispatch(slice.actions.logIn({
-                    isLoggedIn: true,
-                    token: res.data.token
-                }));
-                dispatch(showSnackbar({severity: "success", message: res.data.message}))
+                dispatch(
+                    slice.actions.logIn({
+                        isLoggedIn: true,
+                        token: res.data.token
+                    })
+                );
+
+                window.localStorage.setItem("user_id", res.data.user_id)
+
+
+                dispatch(showSnackbar({ severity: "success", message: res.data.message }))
             })
             .catch(error => {
                 console.log(error);
-                dispatch(showSnackbar({severity: "error", message: error.message}))
+                dispatch(showSnackbar({ severity: "error", message: error.message }))
 
             })
     };
@@ -59,6 +65,8 @@ export function LoginUser(formValues) {
 
 export function LogoutUser() {
     return async (dispatch, getState) => {
+        window.localStorage.removeItem("user_id")
+
         dispatch(slice.actions.signOut())
     }
 };
@@ -111,9 +119,9 @@ export function RegisterUser(formValues) {
 
             })
             .finally(() => {
-               if(!getState().auth.error){
-                window.location.href = "/auth/verify"
-               }
+                if (!getState().auth.error) {
+                    window.location.href = "/auth/verify"
+                }
             })
     }
 }
@@ -123,12 +131,15 @@ export function VerifyEmail(formValues) {
         await axios.post("/auth/verify-otp", { ...formValues }, { headers: { "Content-Type": "application/json" } })
             .then(res => {
                 console.log(res);
-dispatch(
-    slice.actions.logIn({
-        isLoggedIn: true,
-        token: res.data.token
-    })
-)
+                dispatch(
+                    slice.actions.logIn({
+                        isLoggedIn: true,
+                        token: res.data.token
+                    })
+                )
+
+
+                window.localStorage.setItem("user_id", res.data.user_id)
             })
             .catch(error => {
                 console.log(error);
