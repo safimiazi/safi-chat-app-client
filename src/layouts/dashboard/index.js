@@ -44,12 +44,17 @@ const DashboardLayout = () => {
         dispatch(showSnackbar({ severity: "success", message: data.message }))
       });
 
+      socket.on("start_chat", ()=> {
+
+      })
+
     }
 
     return () => {
-      socket.off("new_friend_request");
-      socket.off("request_accepted");
-      socket.off("request_sent");
+      socket?.off("new_friend_request");
+      socket?.off("request_accepted");
+      socket?.off("request_sent");
+      socket?.off("start_chat")
     }
   },[isLoggedIn, socket])
 

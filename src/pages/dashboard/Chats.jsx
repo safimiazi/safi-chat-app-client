@@ -2,24 +2,35 @@ import styled from '@emotion/styled';
 import { faker } from '@faker-js/faker';
 import { Avatar, Badge, Box, Button, Divider, IconButton, InputBase, Stack, Typography, alpha } from '@mui/material';
 import { ArchiveBox, CircleDashed, MagnifyingGlass, Users } from 'phosphor-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChatList } from '../../data';
 import { SimpleBarStyle } from '../../components/Scrollbar';
 import { useTheme } from '@emotion/react';
 import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
 import ChatElement from '../../components/ChatElements';
 import Friends from '../../Sections/Main/Friends';
+import { socket } from '../../Socket';
+import { useSelector } from 'react-redux';
 
 
 
 
 
 
-
+const user_id = window.localStorage.getItem("user_id")
 
 const Chats = () => {
     const [openDialog, setOpenDialog] = useState(false)
     const theme = useTheme()
+
+    const {conversations} = useSelector((state)=> state.conversation.direct_chat);
+
+useEffect(()=> {
+    socket.emit("get_direct_conversations", {user_id}, (data)=> {
+        //data => list of conversation
+    })
+})
+
 
     const handleCloseDialog = () => {
         setOpenDialog(false);
@@ -64,12 +75,12 @@ const Chats = () => {
                 <Stack spacing={2} direction="column" sx={{ flexGrow: 1, paddingRight:"10px", overflow: "auto", height: "100%" }}>
                     <SimpleBarStyle timeout={500}>
                         <Stack spacing={2.4}>
-                            <Typography variant='subtitle2' sx={{ color: "#676767" }}>
+                            {/* <Typography variant='subtitle2' sx={{ color: "#676767" }}>
                                 Pinned
                             </Typography>
                             {ChatList.filter((el) => el.pinned).map((el) => {
                                 return <ChatElement {...el}></ChatElement>
-                            })}
+                            })} */}
 
 
                         </Stack>
@@ -77,7 +88,7 @@ const Chats = () => {
                             <Typography paddingTop={2} variant='subtitle2' sx={{ color: "#676767" }}>
                                 All Chats
                             </Typography>
-                            {ChatList.filter((el) => !el.pinned).map((el) => {
+                            {conversations.filter((el) => !el.pinned).map((el) => {
                                 return <ChatElement {...el}></ChatElement>
                             })}
 

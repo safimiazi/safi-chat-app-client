@@ -4,6 +4,7 @@ import { Stack } from '@mui/system';
 import { socket } from '../Socket';
 import StyledBadge from './StyledBadge.jsx';
 import { Chat } from 'phosphor-react';
+const user_id = window.localStorage.getItem('user_id');
 
 const StyledChatBox = styled(Box)(({ theme }) => ({
   '&:hover': {
@@ -13,7 +14,6 @@ const StyledChatBox = styled(Box)(({ theme }) => ({
 
 const UserComponent = ({ firstName, lastName, _id, online, img }) => {
   const name = `${firstName} ${lastName}`;
-  const user_id = window.localStorage.getItem('user_id');
   const theme = useTheme();
 
   const handleSendRequest = () => {
@@ -107,8 +107,11 @@ const FriendComponent = ({ firstName, lastName, _id, online, img }) => {
           </Stack>
         </Stack>
         <Stack direction="row" spacing={2} alignItems="center">
-          <IconButton onClick={()=> {}}>
+          <IconButton onClick={()=> {
+              socket.emit("start_conversation", {to: _id, from: user_id})
+          }}>
             {/* start a new conversation */}
+          
             <Chat/>
           </IconButton>
         </Stack>
