@@ -48,6 +48,7 @@ const FriendRequestList = () => {
     }, []);
 
     const { friendRequests } = useSelector((state) => state.app)
+ 
     return (
         <>
             {friendRequests.map((el, idx) => {

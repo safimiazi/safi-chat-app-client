@@ -24,7 +24,7 @@ const Chats = () => {
     const theme = useTheme()
 
     const {conversations} = useSelector((state)=> state.conversation.direct_chat);
-
+console.log("nati", conversations);
 useEffect(()=> {
     socket.emit("get_direct_conversations", {user_id}, (data)=> {
         //data => list of conversation
@@ -88,6 +88,7 @@ useEffect(()=> {
                             <Typography paddingTop={2} variant='subtitle2' sx={{ color: "#676767" }}>
                                 All Chats
                             </Typography>
+                            
                             {conversations.filter((el) => !el.pinned).map((el) => {
                                 return <ChatElement {...el}></ChatElement>
                             })}

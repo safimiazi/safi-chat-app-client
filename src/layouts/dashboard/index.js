@@ -5,11 +5,13 @@ import SideBar from "../../pages/dashboard/SideBar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { connectSocket, socket } from "../../Socket";
-import { showSnackbar } from "../../redux/slices/Apps";
+import { SelectConversation, showSnackbar } from "../../redux/slices/Apps";
+import { AddDirectConversation, UpdateDirectConversation } from "../../redux/slices/conversation";
 
 
 
 const DashboardLayout = () => {
+  const { conversations } = useSelector((state) => state.conversation.direct_chat)
   const dispatch = useDispatch()
   const { isLoggedIn } = useSelector((state) => state.auth)
   const theme = useTheme()
@@ -35,6 +37,8 @@ const DashboardLayout = () => {
       //"new_friend_request"
 
       socket.on("new_friend_request", (data) => {
+        console.log("datadata", data);
+     
         dispatch(showSnackbar({ severity: "success", message: data.message }))
       });
       socket.on("request_accepted", (data) => {
@@ -44,8 +48,15 @@ const DashboardLayout = () => {
         dispatch(showSnackbar({ severity: "success", message: data.message }))
       });
 
-      socket.on("start_chat", ()=> {
-
+      socket.on("start_chat", (data) => {
+        console.log(data);
+        const existing_conversation = conversations.find((el) => el.id === data._id)
+        if (existing_conversation) {
+          dispatch(UpdateDirectConversation({ conversations: data }))
+        } else {
+          dispatch(AddDirectConversation({ conversations: data }))
+        }
+        dispatch(SelectConversation({ room_id: data._id }))
       })
 
     }
@@ -56,7 +67,7 @@ const DashboardLayout = () => {
       socket?.off("request_sent");
       socket?.off("start_chat")
     }
-  },[isLoggedIn, socket])
+  }, [isLoggedIn, socket])
 
 
 
