@@ -49,7 +49,7 @@ const DashboardLayout = () => {
       });
 
       socket.on("start_chat", (data) => {
-        console.log(data);
+        console.log("forid vai", data);
         const existing_conversation = conversations.find((el) => el.id === data._id)
         if (existing_conversation) {
           dispatch(UpdateDirectConversation({ conversations: data }))

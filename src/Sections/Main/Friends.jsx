@@ -14,6 +14,7 @@ const UsersList = () => {
     }, []);
 
     const { users } = useSelector((state) => state.app)
+    console.log("users", users);
     return (
         <>
             {users.map((el, idx) => {
@@ -23,6 +24,8 @@ const UsersList = () => {
         </>
     );
 };
+
+
 const FriendsList = () => {
     const dispatch = useDispatch();
 
@@ -31,6 +34,7 @@ const FriendsList = () => {
     }, []);
 
     const { friends } = useSelector((state) => state.app)
+    console.log("friends list", friends);
     return (
         <>
             {friends.map((el, idx) => {
@@ -48,7 +52,7 @@ const FriendRequestList = () => {
     }, []);
 
     const { friendRequests } = useSelector((state) => state.app)
- 
+ console.log("firend request", friendRequests);
     return (
         <>
             {friendRequests.map((el, idx) => {

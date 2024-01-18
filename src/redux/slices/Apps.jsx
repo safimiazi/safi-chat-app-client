@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import axiosInstance from "../../utils/axios"
 
 
 const initialState = {
@@ -107,8 +107,9 @@ export const closeSnackbar = () => async (dispatch, getState) => {
 };
 
 export const FetchUsers = () => {
+    
     return async (dispatch, getState) => {
-        await axios.get("/user/get-users", {
+        await axiosInstance.get("/user/get-users", {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${getState().auth.token}`,
@@ -123,13 +124,13 @@ export const FetchUsers = () => {
 }
 export const FetchFriends = () => {
     return async (dispatch, getState) => {
-        await axios.get("/user/get-friends", {
+        await axiosInstance.get("/user/get-friends", {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${getState().auth.token}`,
             },
         }).then((response) => {
-            console.log(response);
+            console.log("naim vai",response);
             dispatch(slice.actions.updateFriends({ friends: response.data.data }))
         }).catch((error) => {
             console.log(error);
@@ -138,9 +139,9 @@ export const FetchFriends = () => {
 }
 export const FetchFriendRequests = () => {
     return async (dispatch, getState) => {
-        const  Authorization= `Bearer ${getState()}`
+        const  Authorization= `Bearer ${getState().auth.token}`
 console.log("mmmmm", Authorization);
-        await axios.get("/user/get-friend-requests", {
+        await axiosInstance.get("/user/get-friend-requests", {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${getState().auth.token}`,
