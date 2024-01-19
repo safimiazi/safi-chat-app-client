@@ -109,13 +109,14 @@ export const closeSnackbar = () => async (dispatch, getState) => {
 export const FetchUsers = () => {
     
     return async (dispatch, getState) => {
+
         await axiosInstance.get("/user/get-users", {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${getState().auth.token}`,
             },
         }).then((response) => {
-            console.log(response);
+            console.log('response', response);
             dispatch(slice.actions.updateUsers({ users: response.data.data }))
         }).catch((error) => {
             console.log(error);

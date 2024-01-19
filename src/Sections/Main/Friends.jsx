@@ -19,7 +19,7 @@ const UsersList = () => {
         <>
             {users.map((el, idx) => {
                 // TODO => Render UserComponents
-                return <UserComponent key={el._id} {...el}/>
+                return <UserComponent key={idx} {...el} />
             })}
         </>
     );
@@ -35,14 +35,20 @@ const FriendsList = () => {
 
     const { friends } = useSelector((state) => state.app)
     console.log("friends list", friends);
-    return (
-        <>
-            {friends.map((el, idx) => {
-                // TODO => Render Friend Components
-                return <FriendComponent key={el._id} {...el}/>
-            })}
-        </>
-    );
+    try {
+        return (
+            <>
+                {friends?.map((el, idx) => {
+                    // TODO => Render Friend Components
+                    return <FriendComponent key={el._id} {...el} />;
+                })}
+            </>
+        );
+    } catch (error) {
+        console.error("Error rendering friends:", error);
+        // You can handle the error here, for example, display an error message or log it
+        return <div>Error rendering friends. Please try again later.</div>;
+    }
 };
 const FriendRequestList = () => {
     const dispatch = useDispatch();
@@ -52,14 +58,14 @@ const FriendRequestList = () => {
     }, []);
 
     const { friendRequests } = useSelector((state) => state.app)
- console.log("firend request", friendRequests);
+    console.log("firend request", friendRequests);
     return (
         <>
             {friendRequests.map((el, idx) => {
-                     //el => {_id, sender: {_id, firstName, lastName, img, online}}
+                //el => {_id, sender: {_id, firstName, lastName, img, online}}
 
                 // TODO => Render Friend request Components
-                return <FriendRequestComponent key={el._id} {...el.sender} id={el._id}/>
+                return <FriendRequestComponent key={el._id} {...el.sender} id={el._id} />
 
             })}
         </>
