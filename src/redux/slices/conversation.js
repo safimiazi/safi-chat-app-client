@@ -44,7 +44,7 @@ const slice = createSlice({
       const this_conversation = action.payload.conversation;
       state.direct_chat.conversations = state.direct_chat.conversations.map(
         (el) => {
-          if (el?.id !== this_conversation._id) {
+          if (el?.id !== this_conversation?._id) {
             return el;
           } else {
             const user = this_conversation.participants.find(

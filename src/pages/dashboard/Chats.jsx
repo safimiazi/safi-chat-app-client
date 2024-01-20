@@ -10,7 +10,8 @@ import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Sea
 import ChatElement from '../../components/ChatElements';
 import Friends from '../../Sections/Main/Friends';
 import { socket } from '../../Socket';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { FetchDirectConversations } from '../../redux/slices/conversation';
 
 
 
@@ -22,14 +23,20 @@ const user_id = window.localStorage.getItem("user_id")
 const Chats = () => {
     const [openDialog, setOpenDialog] = useState(false)
     const theme = useTheme()
+     const dispatch= useDispatch()
 
     const {conversations} = useSelector((state)=> state.conversation.direct_chat);
 console.log("nati", conversations);
+
+
 useEffect(()=> {
     socket.emit("get_direct_conversations", {user_id}, (data)=> {
         //data => list of conversation
+        dispatch(FetchDirectConversations({ conversations: data }));
     })
-})
+},[])
+
+
 
 
     const handleCloseDialog = () => {
