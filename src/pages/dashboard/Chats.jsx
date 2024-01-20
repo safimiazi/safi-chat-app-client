@@ -34,7 +34,8 @@ useEffect(()=> {
         //data => list of conversation
         dispatch(FetchDirectConversations({ conversations: data }));
     })
-},[])
+// eslint-disable-next-line react-hooks/exhaustive-deps
+},[socket, dispatch, user_id])
 
 
 
