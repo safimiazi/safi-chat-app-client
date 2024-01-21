@@ -19,7 +19,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 function App() {
   const dispatch = useDispatch()
-  const { open, message, severity } = useSelector((state) => state.app);
+  const { open, message, severity } = useSelector((state) => state?.app?.snackbar);
   console.log("hi", open);
   return (
     <>

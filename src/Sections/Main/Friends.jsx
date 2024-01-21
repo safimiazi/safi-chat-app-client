@@ -40,7 +40,7 @@ const FriendsList = () => {
             <>
                 {friends?.map((el, idx) => {
                     // TODO => Render Friend Components
-                    return <FriendComponent key={el._id} {...el} />;
+                    return <FriendComponent key={el._id} {...el} /> ;
                 })}
             </>
         );

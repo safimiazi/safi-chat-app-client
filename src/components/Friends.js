@@ -109,7 +109,9 @@ const FriendComponent = ({ firstName, lastName, _id, online, img }) => {
         <Stack direction="row" spacing={2} alignItems="center">
           <IconButton onClick={()=> {
               socket.emit("start_conversation", {to: _id, from: user_id})
-              console.log("start_conversation", _id);
+              console.log("start_conversation to id", _id);
+             
+
           }}>
             {/* start a new conversation */}
           
