@@ -83,8 +83,8 @@ const FriendRequestComponent = ({ firstName, lastName, _id, online, img, id }) =
 };
 const FriendComponent = ({ firstName, lastName, _id, online, img }) => {
   const name = `${firstName} ${lastName}`;
-
   const theme = useTheme();
+  console.log("name", name);
 
 
 
