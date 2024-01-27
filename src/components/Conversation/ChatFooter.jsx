@@ -98,22 +98,25 @@ const ChatInput = ({ openPicker, setOpenPicker, message, setMessage, setSelectEm
     );
   };
   
-  const ChatFooter = ({_id}) => {
+  const ChatFooter = () => {
     const theme = useTheme();
     const [openPicker, setOpenPicker] = useState(false);
     const [message, setMessage] = useState("");
     const [selectEmoji, setSelectEmoji] = useState("");
     const user_id = window.localStorage.getItem("user_id")
-
+    const room_id = window.localStorage.getItem("room_id")
+    const roomId = useSelector(state =>state.room_id);
    
   
     const handleSendMessage = () => {
       console.log("message", message);
+      console.log("roomid", room_id);
+
       // Your logic for sending the message
       if (message.trim() !== '') {
         const data = {
           message,
-          conversation_id: 'your_conversation_id',
+          conversation_id: roomId,
           from: user_id,
           to: 'receiver_user_id',
           type: 'text',

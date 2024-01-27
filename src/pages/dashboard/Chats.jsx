@@ -97,7 +97,7 @@ useEffect(()=> {
                                 All Chats
                             </Typography>
                             
-                            {conversations.filter((el) => !el.pinned).map((el) => {
+                            {conversations?.filter((el) => !el.pinned).map((el) => {
                                 return <ChatElement {...el}></ChatElement>
                             })}
 

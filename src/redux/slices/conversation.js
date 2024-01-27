@@ -85,9 +85,9 @@ const slice = createSlice({
         pinned: false,
       });
     },
-    // setCurrentConversation(state, action) {
-    //   state.direct_chat.current_conversation = action.payload;
-    // },
+    setCurrentConversation(state, action) {
+      state.direct_chat.current_conversation = action.payload;
+    },
     // fetchCurrentMessages(state, action) {
     //   const messages = action.payload.messages;
     //   const formatted_messages = messages.map((el) => ({
@@ -117,21 +117,24 @@ export const FetchDirectConversations = ({ conversations }) => {
   };
 };
 export const AddDirectConversation = ({ conversation }) => {
+  console.log("nadim", conversation);
+
   return async (dispatch, getState) => {
     dispatch(slice.actions.addDirectConversation({ conversation }));
   };
 };
 export const UpdateDirectConversation = ({ conversation }) => {
+  console.log("nadim", conversation);
   return async (dispatch, getState) => {
     dispatch(slice.actions.updateDirectConversation({ conversation }));
   };
 };
 
-// export const SetCurrentConversation = (current_conversation) => {
-//   return async (dispatch, getState) => {
-//     dispatch(slice.actions.setCurrentConversation(current_conversation));
-//   };
-// };
+export const SetCurrentConversation = (current_conversation) => {
+  return async (dispatch, getState) => {
+    dispatch(slice.actions.setCurrentConversation(current_conversation));
+  };
+};
 
 
 // export const FetchCurrentMessages = ({messages}) => {
