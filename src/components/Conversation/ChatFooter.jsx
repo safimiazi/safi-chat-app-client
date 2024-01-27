@@ -104,22 +104,21 @@ const ChatInput = ({ openPicker, setOpenPicker, message, setMessage, setSelectEm
     const [message, setMessage] = useState("");
     const [selectEmoji, setSelectEmoji] = useState("");
     const user_id = window.localStorage.getItem("user_id")
-    const room_id = window.localStorage.getItem("room_id")
-    const roomId = useSelector(state =>state.room_id);
-   
+    const { sideBar, room_id } = useSelector((state) => state.app);
+    const { current_conversation } = useSelector( (state) => state?.conversation?.direct_chat);
   
     const handleSendMessage = () => {
-      console.log("message", message);
-      console.log("roomid", room_id);
+      console.log("message", user_id);
+      console.log("roomid", current_conversation?.user_id);
 
       // Your logic for sending the message
       if (message.trim() !== '') {
         const data = {
           message,
-          conversation_id: roomId,
+          conversation_id: room_id,
           from: user_id,
-          to: 'receiver_user_id',
-          type: 'text',
+          to: current_conversation?.user_id,
+          type: 'Text',
         };
   
         // Emit the text message to the server

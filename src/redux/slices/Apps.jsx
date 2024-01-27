@@ -56,7 +56,6 @@ const slice = createSlice({
         selectConversation(state, action){
             state.chat_type = "individual";
             state.room_id = action.payload.room_id;
-            window.localStorage.setItem("room_id", action.payload.room_id)
 
            
         }

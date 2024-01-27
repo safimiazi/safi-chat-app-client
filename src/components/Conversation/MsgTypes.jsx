@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react"
-import { Box, Divider, IconButton, Link, Menu, MenuItem, Stack, Typography } from "@mui/material"
+import { Box, Divider, IconButton, Link, Menu, MenuItem, Stack, Typography, alpha } from "@mui/material"
 import { DotsThreeVertical, DownloadSimple, Image } from "phosphor-react";
 import { Message_options } from "../../data";
 import { useState } from "react";
@@ -103,19 +103,46 @@ const MediaMsg = ({ el,menu }) => {
 
 
 
-const TextMsg = ({ el,menu }) => {
-    const theme = useTheme()
+// const TextMsg = ({ el,menu }) => {
+//     const theme = useTheme()
+//     return (
+//         <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
+//             <Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.default : theme.palette.primary.main, borderRadius: 1.5, width: "max-content" }}>
+//                 <Typography variant="body2" color={el.incoming ? theme.palette.text : "#fff"}>
+//                     {el.message}
+//                 </Typography>
+//             </Box>
+//             {menu &&  <MessageOptions />}
+//         </Stack>
+//     )
+// }
+
+const TextMsg = ({ el, menu }) => {
+    const theme = useTheme();
     return (
-        <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
-            <Box p={1.5} sx={{ backgroundColor: el.incoming ? theme.palette.background.default : theme.palette.primary.main, borderRadius: 1.5, width: "max-content" }}>
-                <Typography variant="body2" color={el.incoming ? theme.palette.text : "#fff"}>
-                    {el.message}
-                </Typography>
-            </Box>
-            {menu &&  <MessageOptions />}
-        </Stack>
-    )
-}
+      <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
+        <Box
+          px={1.5}
+          py={1.5}
+          sx={{
+            backgroundColor: el.incoming
+              ? alpha(theme.palette.background.default, 1)
+              : theme.palette.primary.main,
+            borderRadius: 1.5,
+            width: "max-content",
+          }}
+        >
+          <Typography
+            variant="body2"
+            color={el.incoming ? theme.palette.text : "#fff"}
+          >
+            {el.message}
+          </Typography>
+        </Box>
+        {menu && <MessageOptions />}
+      </Stack>
+    );
+  };
 
 const Timeline = ({ el }) => {
     const theme = useTheme()
