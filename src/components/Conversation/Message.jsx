@@ -21,6 +21,7 @@ const Message = ({menu}) => {
       socket.emit("get_messages", { conversation_id: current?.id }, (data) => {
         console.log("List of messages", data);
         dispatch(FetchCurrentMessages({ messages: data }));
+        
       });
 
       dispatch(SetCurrentConversation(current));
