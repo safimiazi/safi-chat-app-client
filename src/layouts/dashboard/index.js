@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { connectSocket, socket } from "../../Socket";
 import { SelectConversation, showSnackbar } from "../../redux/slices/Apps";
-import { AddDirectConversation, UpdateDirectConversation } from "../../redux/slices/conversation";
+import { AddDirectConversation, AddDirectMessage, UpdateDirectConversation } from "../../redux/slices/conversation";
 
 
 
@@ -14,6 +14,8 @@ const DashboardLayout = () => {
   const { conversations } = useSelector((state) => state.conversation.direct_chat)
   const dispatch = useDispatch()
   const { isLoggedIn } = useSelector((state) => state.auth)
+  const { current_conversation } = useSelector( (state) => state?.conversation?.direct_chat);
+
   const theme = useTheme()
   console.log(theme);
   const user_id = window.localStorage.getItem("user_id");
@@ -35,6 +37,26 @@ const DashboardLayout = () => {
       }
 
       //"new_friend_request"
+      socket.on("new_message", (data) => {
+        const message = data.message;
+        console.log("akash", message);
+        console.log(current_conversation, data);
+        // check if msg we got is from currently selected conversation
+        if (current_conversation?.id === data.conversation_id) {
+          dispatch(
+            AddDirectMessage({
+              id: message._id,
+              type: "msg",
+              subtype: message.type,
+              message: message.text,
+              incoming: message.to === user_id,
+              outgoing: message.from === user_id,
+            })
+          );
+        }
+      });
+
+
 
       socket.on("new_friend_request", (data) => {
         console.log("datadata", data);

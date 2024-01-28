@@ -27,6 +27,9 @@ const Message = ({menu}) => {
       dispatch(SetCurrentConversation(current));
     }
   }, [dispatch, conversations, room_id]);
+
+  console.log("mukta akter", current_messages);
+
     return (
       <Box p={3}>
           <Stack spacing={3}>

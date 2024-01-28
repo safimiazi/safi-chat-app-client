@@ -19,6 +19,7 @@ const slice = createSlice({
   reducers: {
     fetchDirectConversations(state, action) {
       const list = action.payload.conversations.map((el) => {
+     
         const user = el.participants.find(
           (elm) => elm._id.toString() !== user_id
         );
@@ -28,15 +29,15 @@ const slice = createSlice({
           name: `${user?.firstName} ${user?.lastName}`,
           online: user?.status === "Online",
           img: faker.image.avatar(),
-          msg: faker.music.songName(),
+          // msg: faker.music.songName(),
         //   img: `https://${S3_BUCKET_NAME}.s3.${AWS_S3_REGION}.amazonaws.com/${user?.avatar}`,
-        //   msg: el.messages.slice(-1)[0].text, 
+          msg: el.messages.slice(-1)[0].text, 
           time: "9:36",
           unread: 0,
           pinned: false,
-        //   about: user?.about,
+          // about: user?.about,
         };
-      });
+      })
 
       state.direct_chat.conversations = list;
     },
@@ -144,8 +145,8 @@ export const FetchCurrentMessages = ({messages}) => {
   }
 }
 
-// export const AddDirectMessage = (message) => {
-//   return async (dispatch, getState) => {
-//     dispatch(slice.actions.addDirectMessage({message}));
-//   }
-// }
+export const AddDirectMessage = (message) => {
+  return async (dispatch, getState) => {
+    dispatch(slice.actions.addDirectMessage({message}));
+  }
+}
