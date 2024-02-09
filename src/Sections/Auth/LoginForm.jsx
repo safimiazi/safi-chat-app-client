@@ -20,6 +20,7 @@ const LoginForm = () => {
 
     const defaultValues = {
         email: "demo@safichat.com",
+        
         password: "demo1234"
     }
 

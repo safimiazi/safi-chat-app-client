@@ -33,7 +33,7 @@ export default function cssStyles(theme) {
 
       return {
         background: `linear-gradient(${direction}, ${startColor}, ${endColor});`,
-      };
+      }
     },
     bgImage: (props) => {
       const url = props?.url || '/assets/bg_gradient.jpg';
